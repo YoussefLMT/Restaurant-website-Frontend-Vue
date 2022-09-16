@@ -53,7 +53,9 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="content">
-
+        <Chef :image="image2" name="chef 1" />
+        <Chef :image="image2" name="chef 2" />
+        <Chef :image="image2" name="chef 3" />
     </div>
 </section>
 </template>
@@ -63,16 +65,20 @@ import NavBar from '@/components/NavBar.vue'
 import Meal from '@/components/Meal.vue'
 import 'animate.css'
 import image from '@/assets/pexels-ella-olsson-1640777.jpg'
+import Chef from '@/components/Chef.vue'
+import image2 from '@/assets/logo.png'
 
 export default {
     name: 'HomeView',
     components: {
         NavBar,
-        Meal
+        Meal,
+        Chef
     },
     data() {
         return {
-            image
+            image,
+            image2
         }
     },
 }
@@ -199,7 +205,7 @@ export default {
     margin-top: 40px;
 }
 
-.chef .content{
+.chef .content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
