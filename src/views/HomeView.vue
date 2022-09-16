@@ -18,17 +18,17 @@
         <div class="col50">
             <h1 class="title-txt">About <span>Us</span></h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-               Eaque reprehenderit, aut repellat, dolorem illo, voluptatem 
-               minima sapiente praesentium earum possimus nemo debitis est sunt? 
-               Cumque minus sit quis aliquam veniam!<br> Lorem ipsum dolor sit amet, 
-               consectetur adipisicing elit. Assumenda, deserunt maxime consequuntur 
-               dolores quae unde vitae, incidunt quisquam quibusdam voluptates sed iure ad, 
-               fugit provident optio nisi praesentium et doloremque? 
+                Eaque reprehenderit, aut repellat, dolorem illo, voluptatem
+                minima sapiente praesentium earum possimus nemo debitis est sunt?
+                Cumque minus sit quis aliquam veniam!<br> Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Assumenda, deserunt maxime consequuntur
+                dolores quae unde vitae, incidunt quisquam quibusdam voluptates sed iure ad,
+                fugit provident optio nisi praesentium et doloremque?
             </p>
         </div>
         <div class="col50">
-            <div class="imgbox"> 
-              <img src="images/pexels-ella-olsson-1640777.jpg"> 
+            <div class="imgbox">
+                <img src="@/assets/pexels-ella-olsson-1640777.jpg">
             </div>
         </div>
     </div>
@@ -97,5 +97,53 @@ export default {
 .btn:hover {
     background: hsl(6, 84%, 34%);
     border: none;
+}
+
+.about {
+    padding: 100px;
+}
+
+.row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .col50 {
+    position: relative;
+    width: 48%;
+}
+
+.title-txt {
+    color: #111;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.row .col50 p {
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+.title-txt span {
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+.row .col50 .imgbox {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.row .col50 .imgbox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 </style>
