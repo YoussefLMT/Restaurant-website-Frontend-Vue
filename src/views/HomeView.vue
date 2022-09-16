@@ -39,13 +39,14 @@
         <h2 class="title-txt">Our <span>Menu</span></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
-    <div class="content">
+    <!-- <div class="content">
         
-    </div>
+    </div> -->
     <div class="title">
         <a href="#" class="btn">See All</a>
     </div>
 </section>
+
 </template>
 
 <script>
@@ -159,5 +160,17 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.menu{
+    padding: 100px;
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 </style>
