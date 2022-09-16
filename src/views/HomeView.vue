@@ -53,30 +53,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="content">
-        <div class="box">
-            <div class="imgbox">
-                <img src="images/vgf.PNG" alt="">
-            </div>
-            <div class="text">
-                <h3>chef 1</h3>
-            </div>
-        </div>
-        <div class="box">
-            <div class="imgbox">
-                <img src="images/lagmi.PNG" alt="">
-            </div>
-            <div class="text">
-                <h3>chef 2</h3>
-            </div>
-        </div>
-        <div class="box">
-            <div class="imgbox">
-                <img src="images/ghghghg.PNG" alt="">
-            </div>
-            <div class="text">
-                <h3>chef 2</h3>
-            </div>
-        </div>
+
     </div>
 </section>
 </template>
