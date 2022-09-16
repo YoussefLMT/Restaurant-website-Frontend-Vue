@@ -49,7 +49,7 @@
 
 <section class="chef">
     <div class="title">
-        <h2 class="title-txt">Tbakha <span>Dyalna hh</span></h2>
+        <h2 class="title-txt">Our <span>Chefs</span></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="content">
@@ -219,6 +219,14 @@ export default {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.chef .content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
     margin-top: 40px;
 }
 </style>
