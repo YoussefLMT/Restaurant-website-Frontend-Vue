@@ -8,7 +8,7 @@
                 Sed autem voluptate itaque fugit possimus veritatis,
                 totam voluptates. Possimus molestias quisquam unde
             </p>
-            <a href="#" class="btn">Our Menu</a>
+            <router-link to="#" class="btn">Our Menu</router-link>
         </div>
     </div>
 </section>
@@ -43,7 +43,7 @@ export default {
 .main .content {
     max-width: 900px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 240px;
 }
 
 .main .content h1 {

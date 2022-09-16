@@ -2,7 +2,7 @@
 <header>
     <nav>
         <div class="logo">
-            <img src="@/assets/logo.png">
+            <img src="@/assets/food_logo1.png">
         </div>
         <ul v-show="!mobile" class="navigation">
             <li>
@@ -76,7 +76,7 @@ export default {
 
 <style scoped>
 header {
-    background-color: #00cec9;
+    background: transparent;
     z-index: 99;
     width: 100%;
     position: fixed;
@@ -116,8 +116,8 @@ header nav ul .link {
 }
 
 header nav ul .link:hover {
-    color: blue;
-    border-color: blue;
+    color: #e74c3c;
+    border-color: #e74c3c;
 }
 
 header .logo {
@@ -126,7 +126,7 @@ header .logo {
 }
 
 header .logo img {
-    width: 50px;
+    width: 60px;
 }
 
 header .navigation {
