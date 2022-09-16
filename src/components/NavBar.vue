@@ -1,54 +1,70 @@
 <template>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="@/assets/logo.png">
-            </div>
-            <ul v-show="!mobile" class="navigation">
-                <li><router-link class="link" to="/">Home</router-link></li>
-                <li><router-link class="link" to="/about">About</router-link></li>
-                <li><router-link class="link" to="/contact">Contact</router-link></li>
-                <li><router-link class="link" to="/login">Login</router-link></li>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="@/assets/logo.png">
+        </div>
+        <ul v-show="!mobile" class="navigation">
+            <li>
+                <router-link class="link" to="/">Home</router-link>
+            </li>
+            <li>
+                <router-link class="link" to="/about">About</router-link>
+            </li>
+            <li>
+                <router-link class="link" to="/contact">Contact</router-link>
+            </li>
+            <li>
+                <router-link class="link" to="/login">Login</router-link>
+            </li>
+        </ul>
+
+        <div class="icon">
+            <i @click="toggleNavBar" v-show="mobile" class="fa fa-bars" :class="{'icon-active': mobileNav}"></i>
+        </div>
+
+        <transition name="mobile-nav">
+            <ul v-show="mobileNav" class="dropdown-nav">
+                <li>
+                    <router-link class="link" to="/">Home</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/#">About</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/#">Contact</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/#">Login</router-link>
+                </li>
             </ul>
-
-            <div class="icon">
-                <i @click="toggleNavBar" v-show="mobile" class="fa fa-bars" :class="{'icon-active': mobileNav}"></i>
-            </div>
-
-            <transition name="mobile-nav">
-                <ul v-show="mobileNav" class="dropdown-nav">
-                    <li><router-link class="link" to="/">Home</router-link></li>
-                    <li><router-link class="link" to="/#">About</router-link></li>
-                    <li><router-link class="link" to="/#">Contact</router-link></li>
-                    <li><router-link class="link" to="/#">Login</router-link></li>
-                </ul>
-            </transition>
-        </nav>
-    </header>
+        </transition>
+    </nav>
+</header>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
+    data() {
+        return {
             mobile: null,
             mobileNav: null,
             windowWidth: null
         }
     },
-    created(){
+    created() {
         window.addEventListener('resize', this.checkScreenWidth)
         this.checkScreenWidth()
     },
-    methods:{
-        toggleNavBar(){
+    methods: {
+        toggleNavBar() {
             this.mobileNav = !this.mobileNav
         },
-        checkScreenWidth(){
+        checkScreenWidth() {
             this.windowWidth = window.innerWidth
-            if(this.windowWidth <= 750){
+            if (this.windowWidth <= 750) {
                 this.mobile = true
-                return 
+                return
             }
             this.mobile = false
             this.mobileNavfalse = false
@@ -57,3 +73,125 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+header {
+    background-color: #00cec9;
+    z-index: 99;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    transition: .5s ease all;
+    color: white;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 12px 0;
+    transition: .5s ease all;
+    width: 90%;
+    margin: 0 auto;
+}
+
+header nav ul,
+.link {
+    font-weight: 400;
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
+
+header nav ul li {
+    padding: 16px;
+    margin-left: 16px;
+}
+
+header nav ul .link {
+    font-size: 20px;
+    transition: .5s ease all;
+    padding-bottom: 14px;
+    border-bottom: 1px solid transparent;
+}
+
+header nav ul .link:hover {
+    color: blue;
+    border-color: blue;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+header .navigation {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+header .icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 24px;
+    height: 100%;
+}
+
+header .icon i {
+    cursor: pointer;
+    font-size: 24px;
+    transition: .8s ease all;
+}
+
+header .icon-active {
+    transform: rotate(180deg);
+}
+
+header .dropdown-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    background-color: white;
+    top: 0;
+    left: 0;
+}
+
+header .dropdown-nav li {
+    margin-left: 0;
+}
+
+header .dropdown-nav li .link {
+    color: black;
+}
+
+header .mobile-nav-enter-active,
+.mobile-nav-leave-active {
+    transition: .8s ease all;
+}
+
+header .mobile-nav-enter-from,
+.mobile-nav-leave-to {
+    transform: translateX(-250px);
+}
+
+header .mobile-nav-enter-to {
+    transform: translateX(0);
+}
+
+@media(min-width: 1140px) {
+    header nav {
+        max-width: 1140px;
+    }
+}
+</style>
