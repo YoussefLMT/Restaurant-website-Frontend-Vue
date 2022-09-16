@@ -79,8 +79,7 @@ header {
     background: transparent;
     z-index: 99;
     width: 100%;
-    position: fixed;
-    top: 0;
+    position: absolute;
     transition: .5s ease all;
     color: white;
 }
