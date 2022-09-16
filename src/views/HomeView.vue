@@ -33,6 +33,19 @@
         </div>
     </div>
 </section>
+
+<section class="menu">
+    <div class="title">
+        <h2 class="title-txt">Our <span>Menu</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+    </div>
+    <div class="content">
+        
+    </div>
+    <div class="title">
+        <a href="#" class="btn">See All</a>
+    </div>
+</section>
 </template>
 
 <script>
