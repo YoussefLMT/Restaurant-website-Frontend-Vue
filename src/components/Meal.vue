@@ -5,7 +5,7 @@
     </div>
     <div class="text">
         <h3>{{ name }}</h3>
-        <p>{{ price }}</p>
+        <p>{{ price }} DH</p>
         <router-link to="#" class="btn-order">Order</router-link>
     </div>
 </div>

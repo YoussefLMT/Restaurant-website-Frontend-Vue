@@ -9,13 +9,13 @@
                 <router-link class="link" to="/">Home</router-link>
             </li>
             <li>
-                <router-link class="link" to="/about">About</router-link>
+                <router-link class="link" to="#">About</router-link>
             </li>
             <li>
-                <router-link class="link" to="/contact">Contact</router-link>
+                <router-link class="link" to="#">Contact</router-link>
             </li>
             <li>
-                <router-link class="link" to="/login">Login</router-link>
+                <router-link class="link" to="#">Login</router-link>
             </li>
         </ul>
 

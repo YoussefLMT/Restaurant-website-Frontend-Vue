@@ -40,7 +40,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
     <div class="content">
-        <Meal />
+        <Meal :image="image" name="wajba" price="30"/>
     </div>
     <div class="title">
         <a href="#" class="btn">See All</a>
@@ -53,13 +53,19 @@
 import NavBar from '@/components/NavBar.vue'
 import Meal from '@/components/Meal.vue'
 import 'animate.css'
+import image from '@/assets/pexels-ella-olsson-1640777.jpg'
 
 export default {
     name: 'HomeView',
     components: {
         NavBar,
         Meal
-    }
+    },
+    data() {
+      return {
+        image
+      }
+    },
 }
 </script>
 
