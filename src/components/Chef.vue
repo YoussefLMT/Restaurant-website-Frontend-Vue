@@ -39,5 +39,6 @@ export default {
 
 .chef .content .box .text {
     padding: 15px 0 5px;
+    text-align: center;
 }
 </style>
