@@ -1,11 +1,11 @@
 <template>
 <div class="box">
     <div class="imgbox"> 
-        <img src="@/assets/pexels-ella-olsson-1640777.jpg" class="img_fluid"> 
+        <img :src="image"> 
     </div>
     <div class="text">
-        <h3>tt</h3>
-        <p>tt</p>
+        <h3>{{ name }}</h3>
+        <p>{{ price }}</p>
         <router-link to="#" class="btn-order">Order</router-link>
     </div>
 </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-
+    props: ['image', 'name', 'price'],
 }
 </script>
 
