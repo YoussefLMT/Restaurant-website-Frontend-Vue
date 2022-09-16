@@ -39,9 +39,9 @@
         <h2 class="title-txt">Our <span>Menu</span></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
-    <!-- <div class="content">
-        
-    </div> -->
+    <div class="content">
+        <Meal />
+    </div>
     <div class="title">
         <a href="#" class="btn">See All</a>
     </div>
@@ -51,12 +51,14 @@
 
 <script>
 import NavBar from '@/components/NavBar.vue'
+import Meal from '@/components/Meal.vue'
 import 'animate.css'
 
 export default {
     name: 'HomeView',
     components: {
-        NavBar
+        NavBar,
+        Meal
     }
 }
 </script>
@@ -172,5 +174,13 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.menu .content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 </style>
