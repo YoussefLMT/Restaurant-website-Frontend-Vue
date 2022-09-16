@@ -40,13 +40,45 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
     <div class="content">
-        <Meal :image="image" name="wajba" price="30"/>
+        <Meal :image="image" name="wajba" price="30" />
     </div>
     <div class="title">
         <a href="#" class="btn">See All</a>
     </div>
 </section>
 
+<section class="chef">
+    <div class="title">
+        <h2 class="title-txt">Tbakha <span>Dyalna hh</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="content">
+        <div class="box">
+            <div class="imgbox">
+                <img src="images/vgf.PNG" alt="">
+            </div>
+            <div class="text">
+                <h3>chef 1</h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgbox">
+                <img src="images/lagmi.PNG" alt="">
+            </div>
+            <div class="text">
+                <h3>chef 2</h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgbox">
+                <img src="images/ghghghg.PNG" alt="">
+            </div>
+            <div class="text">
+                <h3>chef 2</h3>
+            </div>
+        </div>
+    </div>
+</section>
 </template>
 
 <script>
@@ -62,9 +94,9 @@ export default {
         Meal
     },
     data() {
-      return {
-        image
-      }
+        return {
+            image
+        }
     },
 }
 </script>
@@ -170,11 +202,11 @@ export default {
     object-fit: cover;
 }
 
-.menu{
+.menu {
     padding: 100px;
 }
 
-.title{
+.title {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -182,7 +214,7 @@ export default {
     flex-direction: column;
 }
 
-.menu .content{
+.menu .content {
     display: flex;
     justify-content: center;
     flex-direction: row;
