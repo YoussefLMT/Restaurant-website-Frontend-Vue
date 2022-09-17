@@ -15,13 +15,13 @@
 
 <section class="features">
     <div class="title">
-        <h2 class="title-txt">Our <span>Chefs</span></h2>
+        <h2 class="title-txt">Our <span>Features</span></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="content">
-        <Features :image="image2" name="chef 1" />
-        <Features :image="image2" name="chef 2" />
-        <Features :image="image2" name="chef 3" />
+        <Features :image="image2" name="chef 1" description="test test test"/>
+        <Features :image="image2" name="chef 2" description="test test test"/>
+        <Features :image="image2" name="chef 3" description="test test test"/>
     </div>
 </section>
 
@@ -148,6 +148,10 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 40px;
+}
+
+.features {
+    padding: 100px;
 }
 
 .features .content {

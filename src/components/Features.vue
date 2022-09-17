@@ -5,13 +5,14 @@
     </div>
     <div class="text">
         <h3>{{ name }}</h3>
+        <p>{{ description }} DH</p>
     </div>
 </div>
 </template>
 
 <script>
 export default {
-    props: ['image', 'name'],
+    props: ['image', 'name', 'description'],
 }
 </script>
 
