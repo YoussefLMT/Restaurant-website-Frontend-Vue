@@ -19,9 +19,9 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="content">
-        <Features :image="image2" name="chef 1" description="test test test"/>
-        <Features :image="image2" name="chef 2" description="test test test"/>
-        <Features :image="image2" name="chef 3" description="test test test"/>
+        <Features :image="image2" name="Fresh Food" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
+        <Features :image="image3" name="Free Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
+        <Features :image="image4" name="Cash On Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
     </div>
 </section>
 
@@ -46,7 +46,9 @@ import Meal from '@/components/Meal.vue'
 import 'animate.css'
 import image from '@/assets/pexels-ella-olsson-1640777.jpg'
 import Features from '@/components/Features.vue'
-import image2 from '@/assets/logo.png'
+import image2 from '@/assets/diet.png'
+import image3 from '@/assets/delivery.png'
+import image4 from '@/assets/cash-on-delivery.png'
 
 export default {
     name: 'HomeView',
@@ -58,7 +60,9 @@ export default {
     data() {
         return {
             image,
-            image2
+            image2,
+            image3,
+            image4
         }
     },
 }

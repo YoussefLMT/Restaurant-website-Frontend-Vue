@@ -5,7 +5,7 @@
     </div>
     <div class="text">
         <h3>{{ name }}</h3>
-        <p>{{ description }} DH</p>
+        <p>{{ description }}</p>
     </div>
 </div>
 </template>
@@ -41,5 +41,9 @@ export default {
 .box .text {
     padding: 15px 0 5px;
     text-align: center;
+}
+
+.box .text p{
+    margin-top: 10px;
 }
 </style>
