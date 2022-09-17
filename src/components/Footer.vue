@@ -55,10 +55,32 @@
 </template>
 
 <script>
-export default {
-}
+export default {}
 </script>
 
 <style scoped>
+.footer {
+    margin-top: 150px;
+    position: relative;
+    background: #D8D8D8;
+    padding: 20px;
+}
 
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.footer-in {
+    background: #B9BAB9;
+    padding: 10px;
+}
+
+.footer-in p {
+    font-size: 18px;
+}
+
+h5 {
+    font-weight: bold;
+}
 </style>
