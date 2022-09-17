@@ -25,8 +25,6 @@
     </div>
 </section>
 
-
-
 <section class="menu">
     <div class="title">
         <h2 class="title-txt">Our <span>Menu</span></h2>
@@ -39,6 +37,7 @@
         <a href="#" class="btn">See All</a>
     </div>
 </section>
+
 </template>
 
 <script>
@@ -118,21 +117,6 @@ export default {
     border: none;
 }
 
-.about {
-    padding: 100px;
-}
-
-.row {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.row .col50 {
-    position: relative;
-    width: 48%;
-}
 
 .title-txt {
     color: #111;
@@ -140,31 +124,11 @@ export default {
     font-weight: 500;
 }
 
-.row .col50 p {
-    font-size: 18px;
-    margin-top: 20px;
-    line-height: 30px;
-}
-
 .title-txt span {
     color: #e74c3c;
     font-weight: 700;
 }
 
-.row .col50 .imgbox {
-    position: relative;
-    width: 100%;
-    height: 300px;
-}
-
-.row .col50 .imgbox img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 .menu {
     padding: 100px;
