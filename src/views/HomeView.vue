@@ -38,6 +38,7 @@
     </div>
 </section>
 
+<Footer />
 </template>
 
 <script>
@@ -49,13 +50,15 @@ import Feature from '@/components/Feature.vue'
 import image2 from '@/assets/diet.png'
 import image3 from '@/assets/delivery.png'
 import image4 from '@/assets/cash-on-delivery.png'
+import Footer from '@/components/Footer.vue'
 
 export default {
     name: 'HomeView',
     components: {
         NavBar,
         Meal,
-        Feature
+        Feature,
+        Footer
     },
     data() {
         return {
