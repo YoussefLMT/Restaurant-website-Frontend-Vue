@@ -13,12 +13,12 @@
                 <label>Email</label>
                 <input type="email" v-model="userData.email" class="text-input">
             </div>
-             <div>
+            <div>
                 <label>Password</label>
                 <input type="password" v-model="userData.password" class="text-input">
             </div>
             <div>
-                <button type="button" class="btn btn-big">Register</button>
+                <button type="button" @click="register" class="btn btn-big">Register</button>
             </div>
             <p>Or <router-link to="/login">Login</router-link>
             </p>
@@ -34,7 +34,7 @@ export default {
     components: {
         NavBar
     },
-     data() {
+    data() {
         return {
             userData: {
                 name: '',
@@ -45,6 +45,23 @@ export default {
             errors: ''
         }
     },
+    methods: {
+        async register() {
+            try {
+                const response = await axiosInstance.post("/register", this.userData)
+                if (response.data.status === 200) {
+                    this.message = response.data.message
+                    this.userData.name = ''
+                    this.userData.email = ''
+                    this.userData.password = ''
+                } else {
+                    this.errors = response.data.validation_err
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }
 }
 </script>
 
