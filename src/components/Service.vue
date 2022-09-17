@@ -16,20 +16,20 @@ export default {
 </script>
 
 <style scoped>
-.chef .content .box {
+.box {
     width: 300px;
     margin: 15px;
     border: 15px solid #fff;
     box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
 }
 
-.chef .content .box .imgbox {
+.box .imgbox {
     position: relative;
     width: 100%;
     height: 250px;
 }
 
-.chef .content .box .imgbox img {
+.box .imgbox img {
     position: absolute;
     top: 0;
     left: 0;
@@ -37,7 +37,7 @@ export default {
     height: 100%;
 }
 
-.chef .content .box .text {
+.box .text {
     padding: 15px 0 5px;
     text-align: center;
 }

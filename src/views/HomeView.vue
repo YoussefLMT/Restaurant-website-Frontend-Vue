@@ -13,7 +13,7 @@
     </div>
 </section>
 
-<section class="chef">
+<section class="features">
     <div class="title">
         <h2 class="title-txt">Our <span>Chefs</span></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -150,7 +150,7 @@ export default {
     margin-top: 40px;
 }
 
-.chef .content {
+.features .content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
