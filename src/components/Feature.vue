@@ -43,7 +43,15 @@ export default {
     text-align: center;
 }
 
-.box .text p{
+.box .text p {
     margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .box .imgbox {
+        position: relative;
+        width: 100%;
+        height: 170px;
+    }
 }
 </style>
