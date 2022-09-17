@@ -1,4 +1,6 @@
 <template>
+<NavBar />
+
 <section class="main">
     <div class="auth-content">
         <form>
@@ -22,8 +24,12 @@
 </template>
 
 <script>
-export default {
+import NavBar from '@/components/NavBar.vue'
 
+export default {
+    components: {
+        NavBar
+    },
 }
 </script>
 
@@ -38,7 +44,10 @@ export default {
 
 .auth-content {
     width: 30%;
-    margin: 50px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 20px;
     background: white;
     border-radius: 5px;
