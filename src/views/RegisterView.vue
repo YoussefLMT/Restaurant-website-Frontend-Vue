@@ -7,15 +7,15 @@
             <h2 class="form-title">Login</h2>
             <div>
                 <label>Name</label>
-                <input type="text" class="text-input">
+                <input type="text" v-model="userData.name" class="text-input">
             </div>
             <div>
                 <label>Email</label>
-                <input type="email" class="text-input">
+                <input type="email" v-model="userData.email" class="text-input">
             </div>
              <div>
                 <label>Password</label>
-                <input type="password" class="text-input">
+                <input type="password" v-model="userData.password" class="text-input">
             </div>
             <div>
                 <button type="button" class="btn btn-big">Register</button>
@@ -33,6 +33,17 @@ import NavBar from '@/components/NavBar.vue'
 export default {
     components: {
         NavBar
+    },
+     data() {
+        return {
+            userData: {
+                name: '',
+                email: '',
+                password: ''
+            },
+            message: '',
+            errors: ''
+        }
     },
 }
 </script>
