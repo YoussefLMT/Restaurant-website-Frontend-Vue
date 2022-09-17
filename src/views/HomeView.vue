@@ -53,9 +53,9 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="content">
-        <Chef :image="image2" name="chef 1" />
-        <Chef :image="image2" name="chef 2" />
-        <Chef :image="image2" name="chef 3" />
+        <Service :image="image2" name="chef 1" />
+        <Service :image="image2" name="chef 2" />
+        <Service :image="image2" name="chef 3" />
     </div>
 </section>
 </template>
@@ -65,7 +65,7 @@ import NavBar from '@/components/NavBar.vue'
 import Meal from '@/components/Meal.vue'
 import 'animate.css'
 import image from '@/assets/pexels-ella-olsson-1640777.jpg'
-import Chef from '@/components/Chef.vue'
+import Service from '@/components/Service.vue'
 import image2 from '@/assets/logo.png'
 
 export default {
@@ -73,7 +73,7 @@ export default {
     components: {
         NavBar,
         Meal,
-        Chef
+        Service
     },
     data() {
         return {
