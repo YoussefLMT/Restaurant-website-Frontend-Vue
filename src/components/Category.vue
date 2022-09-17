@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 .box {
-    width: 300px;
+    width: 250px;
     margin: 15px;
     border: 15px solid #fff;
     box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
@@ -26,7 +26,7 @@ export default {
 .box .imgbox {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 200px;
 }
 
 .box .imgbox img {

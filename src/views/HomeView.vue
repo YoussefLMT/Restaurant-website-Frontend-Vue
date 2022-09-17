@@ -44,12 +44,11 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
     <div class="content">
-        <Category :image="imageCat1" name="wajba" />
-                <Category :image="imageCat2" name="wajba" />
-        <Category :image="imageCat3" name="wajba" />
-        <Category :image="imageCat4" name="wajba" />
-        <Category :image="imageCat5" name="wajba" />
-
+        <Category :image="imageCat1" name="Burger" />
+        <Category :image="imageCat2" name="Pizza" />
+        <Category :image="imageCat3" name="Salad" />
+        <Category :image="imageCat4" name="Sandwich" />
+        <Category :image="imageCat5" name="Spaguetti" />
     </div>
 </section>
 
@@ -72,7 +71,6 @@ import imageCat2 from '@/assets/pizza.png'
 import imageCat3 from '@/assets/salad.png'
 import imageCat4 from '@/assets/sandwich.png'
 import imageCat5 from '@/assets/spaguetti.png'
-
 
 export default {
     name: 'HomeView',
