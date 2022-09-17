@@ -19,9 +19,9 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="content">
-        <Features :image="image2" name="Fresh Food" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
-        <Features :image="image3" name="Free Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
-        <Features :image="image4" name="Cash On Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
+        <Feature :image="image2" name="Fresh Food" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
+        <Feature :image="image3" name="Free Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
+        <Feature :image="image4" name="Cash On Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
     </div>
 </section>
 
@@ -45,7 +45,7 @@ import NavBar from '@/components/NavBar.vue'
 import Meal from '@/components/Meal.vue'
 import 'animate.css'
 import image from '@/assets/pexels-ella-olsson-1640777.jpg'
-import Features from '@/components/Features.vue'
+import Feature from '@/components/Feature.vue'
 import image2 from '@/assets/diet.png'
 import image3 from '@/assets/delivery.png'
 import image4 from '@/assets/cash-on-delivery.png'
@@ -55,7 +55,7 @@ export default {
     components: {
         NavBar,
         Meal,
-        Features
+        Feature
     },
     data() {
         return {
