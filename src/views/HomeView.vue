@@ -19,9 +19,9 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="content">
-        <Feature :image="image2" name="Fresh Food" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
-        <Feature :image="image3" name="Free Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
-        <Feature :image="image4" name="Cash On Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing"/>
+        <Feature :image="image2" name="Fresh Food" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
+        <Feature :image="image3" name="Free Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
+        <Feature :image="image4" name="Cash On Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
     </div>
 </section>
 
@@ -44,7 +44,12 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
     <div class="content">
-        
+        <Category :image="imageCat1" name="wajba" />
+                <Category :image="imageCat2" name="wajba" />
+        <Category :image="imageCat3" name="wajba" />
+        <Category :image="imageCat4" name="wajba" />
+        <Category :image="imageCat5" name="wajba" />
+
     </div>
 </section>
 
@@ -61,6 +66,13 @@ import image2 from '@/assets/diet.png'
 import image3 from '@/assets/delivery.png'
 import image4 from '@/assets/cash-on-delivery.png'
 import Footer from '@/components/Footer.vue'
+import Category from '@/components/Category.vue'
+import imageCat1 from '@/assets/cheeseburger.png'
+import imageCat2 from '@/assets/pizza.png'
+import imageCat3 from '@/assets/salad.png'
+import imageCat4 from '@/assets/sandwich.png'
+import imageCat5 from '@/assets/spaguetti.png'
+
 
 export default {
     name: 'HomeView',
@@ -68,14 +80,20 @@ export default {
         NavBar,
         Meal,
         Feature,
-        Footer
+        Footer,
+        Category
     },
     data() {
         return {
             image,
             image2,
             image3,
-            image4
+            image4,
+            imageCat1,
+            imageCat2,
+            imageCat3,
+            imageCat4,
+            imageCat5
         }
     },
 }
@@ -134,7 +152,6 @@ export default {
     border: none;
 }
 
-
 .title-txt {
     color: #111;
     font-size: 40px;
@@ -145,7 +162,6 @@ export default {
     color: #e74c3c;
     font-weight: 700;
 }
-
 
 .menu {
     padding: 100px;
