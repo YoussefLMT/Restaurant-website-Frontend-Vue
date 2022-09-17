@@ -23,6 +23,10 @@ export default {
     box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
 }
 
+.box:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .box .imgbox {
     position: relative;
     width: 100%;

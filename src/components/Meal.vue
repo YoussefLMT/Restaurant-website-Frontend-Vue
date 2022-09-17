@@ -26,6 +26,10 @@ export default {
     border-radius: 15px;
 }
 
+.box:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .box .imgbox{
     position: relative;
     width: 100%;
