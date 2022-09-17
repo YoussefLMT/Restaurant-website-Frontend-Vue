@@ -6,7 +6,7 @@
     <div class="text">
         <h3>{{ name }}</h3>
         <p>{{ price }} DH</p>
-        <router-link to="#" class="btn-order">Order</router-link>
+        <router-link to="#" class="btn-show">Show</router-link>
     </div>
 </div>
 </template>
@@ -49,19 +49,18 @@ export default {
     color: #e74c3c;
 }
 
-.btn-order{
+.btn-show{
     font-size: 15px;
     color: #fff;
     background: #e74c3c; 
     display: inline-block; 
     padding: 10px 30px; 
-    margin-top: 5px; 
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
 }
 
-.btn-order:hover{
+.btn-show:hover{
     background: hsl(6, 84%, 34%);  
     border: none;
 }

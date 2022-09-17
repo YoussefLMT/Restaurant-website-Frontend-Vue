@@ -32,6 +32,10 @@
     </div>
     <div class="content">
         <Meal :image="image" name="wajba" price="30" />
+                <Meal :image="image" name="wajba" price="30" />
+        <Meal :image="image" name="wajba" price="30" />
+        <Meal :image="image" name="wajba" price="30" />
+
     </div>
     <div class="title">
         <a href="#" class="btn">See All</a>
