@@ -38,6 +38,16 @@
     </div>
 </section>
 
+<section class="categories">
+    <div class="title">
+        <h2 class="title-txt">Our <span>Categories</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+    </div>
+    <div class="content">
+        
+    </div>
+</section>
+
 <Footer />
 </template>
 
@@ -168,4 +178,6 @@ export default {
     flex-direction: row;
     margin-top: 40px;
 }
+
+
 </style>
