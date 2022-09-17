@@ -103,4 +103,10 @@ export default {
     color: white;
     background: #005255;
 }
+
+@media (max-width: 600px) {
+    .auth-content {
+        width: 80%;
+    }
+}
 </style>
