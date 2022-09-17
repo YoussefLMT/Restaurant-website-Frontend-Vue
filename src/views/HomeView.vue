@@ -13,6 +13,18 @@
     </div>
 </section>
 
+<section class="chef">
+    <div class="title">
+        <h2 class="title-txt">Our <span>Chefs</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="content">
+        <Service :image="image2" name="chef 1" />
+        <Service :image="image2" name="chef 2" />
+        <Service :image="image2" name="chef 3" />
+    </div>
+</section>
+
 <section class="about">
     <div class="row">
         <div class="col50 animate__animated animate__backInLeft">
@@ -46,8 +58,6 @@
         <a href="#" class="btn">See All</a>
     </div>
 </section>
-
-
 </template>
 
 <script>
