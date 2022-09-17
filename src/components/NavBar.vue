@@ -15,7 +15,10 @@
                 <router-link class="link" to="#">Contact</router-link>
             </li>
             <li>
-                <router-link class="link" to="#">Login</router-link>
+                <router-link class="link" to="/login">Login</router-link>
+            </li>
+            <li>
+                <router-link class="link" to="/register">Register</router-link>
             </li>
         </ul>
 

@@ -16,7 +16,7 @@
             <div>
                 <button type="button" class="btn btn-big">Login</button>
             </div>
-            <p>Or <router-link to="#">Register</router-link>
+            <p>Or <router-link to="/register">Register</router-link>
             </p>
         </form>
     </div>
