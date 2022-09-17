@@ -82,7 +82,7 @@ export default {
 }
 
 .auth-content {
-    width: 30%;
+    width: 460px;
     position: absolute;
     top: 50%;
     left: 50%;
