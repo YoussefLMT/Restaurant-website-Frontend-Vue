@@ -179,5 +179,15 @@ export default {
     margin-top: 40px;
 }
 
+.categories {
+    padding: 100px;
+}
 
+.categories .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
 </style>
