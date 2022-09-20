@@ -15,8 +15,15 @@
 </template>
 
 <script>
-export default {
+import SidebarLink from './SidebarLink'
+import { collapsed, toggleSidebar, sidebarWidth } from './state'
 
+export default {
+  props: {},
+  components: { SidebarLink },
+  setup() {
+    return { collapsed, toggleSidebar, sidebarWidth }
+  }
 }
 </script>
 
