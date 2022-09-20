@@ -1,14 +1,19 @@
-import { createStore } from 'vuex'
+const AuthModule = {
+    state: {
+        user: {
+            token: localStorage.getItem('token'),
+            role: localStorage.getItem('role')
+        },
+    },
+    getters: {
+    },
+    mutations: {
+        setUserRole(state, role) {
+            state.user.role = role
+        },
+    },
+    actions: {
+    },
+}
 
-export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+export default AuthModule
