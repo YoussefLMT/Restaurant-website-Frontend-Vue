@@ -50,6 +50,25 @@ const routes = [
       }
     }
   },
+  {
+    path: '/meals',
+    name: 'meals',
+    component: () => import('../views/MealsView.vue'),
+    meta: {
+      requiresAuth: true
+    },
+    beforeEnter: (to, from, next) => {
+      if (store.state.auth.user.token) {
+        if (store.state.auth.user.role !== "admin") {
+          next({ name: 'notFound' });
+        } else {
+          next()
+        }
+      } else {
+        next({ name: 'login' })
+      }
+    }
+  },
 ]
 
 const router = createRouter({
