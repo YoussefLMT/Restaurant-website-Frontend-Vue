@@ -1,4 +1,5 @@
 const AuthModule = {
+    namespaced: true,
     state: {
         user: {
             token: localStorage.getItem('token'),

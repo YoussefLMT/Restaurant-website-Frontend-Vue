@@ -14,7 +14,7 @@
                 <input type="password" v-model="userData.password" class="text-input">
             </div>
             <div>
-                <button type="button" class="btn btn-big">Login</button>
+                <button type="button" @click="login" class="btn btn-big">Login</button>
             </div>
             <p>Or <router-link to="/register">Register</router-link>
             </p>
@@ -25,12 +25,14 @@
 
 <script>
 import NavBar from '@/components/NavBar.vue'
+import axiosInstance from '@/axios'
+import store from '@/store'
 
 export default {
     components: {
         NavBar
     },
-     data() {
+    data() {
         return {
             userData: {
                 email: '',
@@ -40,6 +42,34 @@ export default {
             errors: ''
         }
     },
+    methods: {
+        async login() {
+            try {
+                const response = await axiosInstance.post("/login", this.userData)
+                if (response.data.status === 401) {
+                    this.message = response.data.message
+                } else if (response.data.role === 'user') {
+                    // this.$router.push('/')
+                    console.log('user')
+                    store.commit('setUserRole', response.data.role)
+                    store.state.user.token = response.data.token
+                    localStorage.setItem('token', response.data.token)
+                    localStorage.setItem('role', response.data.role)
+                } else if (response.data.role === 'admin') {
+                    // this.$router.push('/dashboard')
+                    console.log('admin')
+                    store.commit('setUserRole', response.data.role)
+                    store.state.user.token = response.data.token
+                    localStorage.setItem('token', response.data.token)
+                    localStorage.setItem('role', response.data.role)
+                } else {
+                    this.errors = response.data.validation_err
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }
 }
 </script>
 
