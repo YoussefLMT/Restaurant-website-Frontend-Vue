@@ -1,7 +1,7 @@
 <template>
 <Sidebar />
 
-<div :style="{ 'margin-left': sidebarWidth }">
+<div :style="{ 'margin-left': sidebarWidth }" class="dashboard">
     <h1>Dashboard</h1>
 </div>
 </template>
@@ -18,5 +18,7 @@ export default {
 </script>
 
 <style scoped>
-
+.dashboard{
+    padding: 20px
+}
 </style>

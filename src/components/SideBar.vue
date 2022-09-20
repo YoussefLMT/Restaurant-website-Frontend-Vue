@@ -43,13 +43,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 :root {
     --sidebar-bg-color: #2f855a;
     --sidebar-item-hover: #38a169;
     --sidebar-item-active: #276749;
 }
+</style>
 
+<style scoped>
 .sidebar {
     color: white;
     background-color: var(--sidebar-bg-color);
@@ -73,7 +75,9 @@ export default {
     position: absolute;
     bottom: 0;
     padding: 0.75em;
+
     color: rgba(255, 255, 255, 0.7);
+
     transition: 0.2s linear;
 }
 

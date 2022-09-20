@@ -45,8 +45,8 @@ export default {
     position: relative;
     font-weight: 400;
     user-select: none;
-    margin: 0.1em 0;
-    padding: 0.6em;
+    margin: 0.5em 0;
+    padding: 1.4em;
     border-radius: 0.25em;
     height: 1.8em;
     color: white;
@@ -62,7 +62,6 @@ export default {
 }
 
 .link .icon {
-    flex-shrink: 0;
     font-size: 25px;
     width: 25px;
     margin-right: 10px;
