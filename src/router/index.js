@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import store from '@/store';
 
 const routes = [
   {
@@ -24,7 +25,26 @@ const routes = [
     path: '/register',
     name: 'register',
     component: () => import('../views/RegisterView.vue')
-  }
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import('../views/DashboardView.vue'),
+    meta: {
+      requiresAuth: true
+    },
+    beforeEnter: (to, from, next) => {
+      if (store.state.auth.user.token) {
+        if (store.state.auth.user.role !== "admin") {
+          next({ name: 'notFound' });
+        } else {
+          next()
+        }
+      } else {
+        next({ name: 'login' })
+      }
+    }
+  },
 ]
 
 const router = createRouter({
