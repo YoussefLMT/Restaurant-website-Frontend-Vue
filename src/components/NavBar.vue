@@ -14,8 +14,7 @@
             <li>
                 <router-link class="link" to="#">Contact</router-link>
             </li>
-            <div v-if="!this.$store.state.auth.user.token">
-
+            <div v-if="!this.$store.state.auth.user.token" class="d-flex">
                 <li>
                     <router-link class="link" to="/login">Login</router-link>
                 </li>
@@ -23,7 +22,6 @@
                     <router-link class="link" to="/register">Register</router-link>
                 </li>
             </div>
-
             <div v-else>
                 <li class="nav-item">
                     <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
