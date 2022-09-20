@@ -26,7 +26,7 @@
 
             <div v-else>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-danger">Log Out</button>
+                    <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
                 </li>
             </div>
         </ul>
@@ -58,7 +58,7 @@
 
                 <div v-else>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-danger">Log Out</button>
+                        <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
                     </li>
                 </div>
             </ul>
@@ -68,6 +68,9 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
+import axiosInstance from '@/axios'
+
 export default {
     data() {
         return {
@@ -84,6 +87,7 @@ export default {
         toggleNavBar() {
             this.mobileNav = !this.mobileNav
         },
+
         checkScreenWidth() {
             this.windowWidth = window.innerWidth
             if (this.windowWidth <= 750) {
@@ -93,6 +97,34 @@ export default {
             this.mobile = false
             this.mobileNavfalse = false
             return
+        },
+
+        async logOut() {
+            try {
+                const response = await axiosInstance.post("/logout")
+                if (response.data.status === 200) {
+                    localStorage.removeItem('token')
+                    localStorage.removeItem('role')
+
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+
+                    this.$router.push('/login')
+                }
+            } catch (error) {}
         }
     }
 }
