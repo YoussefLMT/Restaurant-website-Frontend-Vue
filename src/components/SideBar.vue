@@ -16,7 +16,7 @@
 
 <script>
 import SidebarLink from './SidebarLink'
-import { collapsed, toggleSidebar, sidebarWidth } from './state'
+import { collapsed, toggleSidebar, sidebarWidth } from './sidebarState'
 
 export default {
   props: {},
