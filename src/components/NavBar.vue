@@ -46,9 +46,21 @@
                 <li>
                     <router-link class="link" to="/#">Contact</router-link>
                 </li>
-                <li>
-                    <router-link class="link" to="/#">Login</router-link>
-                </li>
+
+                <div v-if="!this.$store.state.auth.user.token">
+                    <li>
+                        <router-link class="link" to="/login">Login</router-link>
+                    </li>
+                    <li>
+                        <router-link class="link" to="/register">Register</router-link>
+                    </li>
+                </div>
+
+                <div v-else>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-danger">Log Out</button>
+                    </li>
+                </div>
             </ul>
         </transition>
     </nav>
