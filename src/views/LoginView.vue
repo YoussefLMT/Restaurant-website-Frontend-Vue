@@ -54,14 +54,14 @@ export default {
                 if (response.data.status === 401) {
                     this.message = response.data.message
                 } else if (response.data.role === 'user') {
-                    // this.$router.push('/')
+                    this.$router.push('/')
                     console.log('user')
                     store.commit('auth/setUserRole', response.data.role)
                     store.commit('auth/setUserToken', response.data.token)
                     localStorage.setItem('token', response.data.token)
                     localStorage.setItem('role', response.data.role)
                 } else if (response.data.role === 'admin') {
-                    // this.$router.push('/dashboard')
+                    this.$router.push('/dashboard')
                     console.log('admin')
                     store.commit('auth/setUserRole', response.data.role)
                     store.commit('auth/setUserToken', response.data.token)
