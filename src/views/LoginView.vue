@@ -5,13 +5,18 @@
     <div class="auth-content">
         <form>
             <h2 class="form-title">Login</h2>
+            <div class="alert alert-danger" v-if="message">
+                {{ message }}
+            </div>
             <div>
                 <label>Email</label>
                 <input type="email" v-model="userData.email" class="text-input">
+                <span class="text-danger" v-if="errors.email">{{ errors.email[0] }}</span>
             </div>
             <div>
                 <label>Password</label>
                 <input type="password" v-model="userData.password" class="text-input">
+                <span class="text-danger" v-if="errors.password">{{ errors.password[0] }}</span>
             </div>
             <div>
                 <button type="button" @click="login" class="btn btn-big">Login</button>
@@ -51,15 +56,15 @@ export default {
                 } else if (response.data.role === 'user') {
                     // this.$router.push('/')
                     console.log('user')
-                    store.commit('setUserRole', response.data.role)
-                    store.state.user.token = response.data.token
+                    store.commit('auth/setUserRole', response.data.role)
+                    store.commit('auth/setUserToken', response.data.token)
                     localStorage.setItem('token', response.data.token)
                     localStorage.setItem('role', response.data.role)
                 } else if (response.data.role === 'admin') {
                     // this.$router.push('/dashboard')
                     console.log('admin')
-                    store.commit('setUserRole', response.data.role)
-                    store.state.user.token = response.data.token
+                    store.commit('auth/setUserRole', response.data.role)
+                    store.commit('auth/setUserToken', response.data.token)
                     localStorage.setItem('token', response.data.token)
                     localStorage.setItem('role', response.data.role)
                 } else {

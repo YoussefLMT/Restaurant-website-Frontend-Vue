@@ -12,6 +12,10 @@ const AuthModule = {
         setUserRole(state, role) {
             state.user.role = role
         },
+
+        setUserToken(state, token) {
+            state.user.token = token
+        },
     },
     actions: {
     },
