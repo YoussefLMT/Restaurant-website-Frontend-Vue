@@ -12,7 +12,7 @@
 <script>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { collapsed } from './state'
+import { collapsed } from './sidebarState'
 
 export default {
   props: {
@@ -41,17 +41,14 @@ export default {
 .link {
     display: flex;
     align-items: center;
-
     cursor: pointer;
     position: relative;
     font-weight: 400;
     user-select: none;
-
     margin: 0.1em 0;
     padding: 0.6em;
     border-radius: 0.25em;
     height: 1.8em;
-
     color: white;
     text-decoration: none;
 }

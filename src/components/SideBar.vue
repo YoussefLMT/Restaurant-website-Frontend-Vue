@@ -8,6 +8,12 @@
         <span v-else>Vue Sidebar</span>
     </h1>
 
+    <SidebarLink to="/" icon="fas fa-home">Home</SidebarLink>
+    <SidebarLink to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLink>
+    <SidebarLink to="/analytics" icon="fas fa-chart-bar">Analytics</SidebarLink>
+    <SidebarLink to="/friends" icon="fas fa-users">Friends</SidebarLink>
+    <SidebarLink to="/image" icon="fas fa-image">Images</SidebarLink>
+
     <span class="collapse-icon" :class="{ 'rotate-180': collapsed }" @click="toggleSidebar">
         <i class="fas fa-angle-double-left" />
     </span>
@@ -16,14 +22,24 @@
 
 <script>
 import SidebarLink from './SidebarLink'
-import { collapsed, toggleSidebar, sidebarWidth } from './sidebarState'
+import {
+    collapsed,
+    toggleSidebar,
+    sidebarWidth
+} from './sidebarState'
 
 export default {
-  props: {},
-  components: { SidebarLink },
-  setup() {
-    return { collapsed, toggleSidebar, sidebarWidth }
-  }
+    props: {},
+    components: {
+        SidebarLink
+    },
+    setup() {
+        return {
+            collapsed,
+            toggleSidebar,
+            sidebarWidth
+        }
+    }
 }
 </script>
 
@@ -44,9 +60,7 @@ export default {
     left: 0;
     bottom: 0;
     padding: 0.5em;
-
     transition: 0.3s ease;
-
     display: flex;
     flex-direction: column;
 }
@@ -59,9 +73,7 @@ export default {
     position: absolute;
     bottom: 0;
     padding: 0.75em;
-
     color: rgba(255, 255, 255, 0.7);
-
     transition: 0.2s linear;
 }
 
