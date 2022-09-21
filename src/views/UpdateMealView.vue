@@ -16,11 +16,10 @@
 </template>
 
 <script>
-import menu from '../components/menu'
+import Sidebar from '@/components/SideBar.vue'
 import {
-    SidebarMenu
-} from 'vue-sidebar-menu'
-import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
+    sidebarWidth
+} from '@/components/sidebarState'
 import axiosInstance from '../axios'
 import Swal from 'sweetalert2'
 

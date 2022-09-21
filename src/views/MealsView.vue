@@ -4,7 +4,7 @@
 <div :style="{ 'margin-left': sidebarWidth }" class="meals">
     <h1>Meals</h1>
 
-    <div class="card me" style="width: 1200px;">
+    <div class="card me" style="width: 1100px;">
         <div class="card-header">
             Meals Managment
 
@@ -39,6 +39,7 @@
                         <td><img :src="'http://127.0.0.1:8000/' + meal.image"></td>
                         <td>
                             <button type="button" @click="deleteMeal(meal.id)" class="btn btn-danger">Delete</button>
+                            <router-link :to="{ name: 'updateMeal', params: {id: meal.id }}" class="btn btn-warning">Update</router-link>
                         </td>
                     </tr>
                 </tbody>
