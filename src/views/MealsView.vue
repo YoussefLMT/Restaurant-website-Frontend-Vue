@@ -77,7 +77,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" @click="addNewMeal" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -122,6 +122,11 @@ export default {
             return store.getters['meals/loading']
         }
     },
+    methods:{
+        onFileSelected(e) {
+            this.meal.image = e.target.files[0]
+        },
+    }
 }
 </script>
 
