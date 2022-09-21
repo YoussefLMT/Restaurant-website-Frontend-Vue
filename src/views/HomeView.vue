@@ -33,8 +33,8 @@
     <div v-if="loading" class="text-center mt-5 mb-5">
         <h3>Loading...</h3>
     </div>
-    <div v-else class="content" v-for="meal in homeMeals" :key="meal.id">
-        <Meal :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" />
+    <div v-else class="content">
+        <Meal v-for="meal in homeMeals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" />
     </div>
     <div class="title">
         <a href="#" class="btn">See All</a>
