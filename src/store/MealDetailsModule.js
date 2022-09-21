@@ -25,10 +25,10 @@ const MealDetailsModule = {
         },
     },
     actions: {
-        getMeal({ commit }) {
+        getMeal({ commit }, id) {
             commit('setLoading', true)
 
-            axiosInstance.get('/get-meal')
+            axiosInstance.get(`/get-meal/${id}`)
                 .then(response => {
                     commit('getMeal', response.data.meal)
                     commit('setLoading', false)
