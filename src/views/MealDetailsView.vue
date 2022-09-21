@@ -23,14 +23,14 @@ import store from '@/store'
 
 export default {
     mounted() {
-        store.dispatch('MealDetails/getMeal', this.$route.params.id)
+        store.dispatch('mealDetails/getMeal', this.$route.params.id)
     },
     computed: {
         meal() {
-            return store.getters['MealDetails/meal']
+            return store.getters['mealDetails/meal']
         },
         loading() {
-            return store.getters['MealDetails/loading']
+            return store.getters['mealDetails/loading']
         }
     },
 }
