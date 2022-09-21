@@ -37,6 +37,9 @@
                         <td>{{ meal.category }}</td>
                         <td>{{ meal.description }}</td>
                         <td><img :src="'http://127.0.0.1:8000/' + meal.image"></td>
+                        <td>
+                            <button type="button" @click="deleteMeal(meal.id)" class="btn btn-danger">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -166,7 +169,7 @@ export default {
                         icon: 'success',
                         title: response.data.message
                     })
-                    
+
                     store.dispatch('meals/getMeals')
                 } else {
                     this.errors = response.data.validation_err
