@@ -1,15 +1,17 @@
 <template>
 <div class="container mt-5">
-
-    <div class="row">
+    <div v-if="loading" class="text-center mb-5">
+        <h3>Loading...</h3>
+    </div>
+    <div v-else class="row">
         <div class="col-md-6">
-            <img class="details-img" src="@/assets/pexels-pixabay-326279.jpg">
+            <img class="details-img" :src="'http://127.0.0.1:8000/' + meal.image">
         </div>
         <div class="col-md-6">
             <router-link to="/">Go Back</router-link><br><br>
-            <h5>tt</h5>
-            <p>Price: 66DH</p>
-            <p>Description: ttttttt</p><br>
+            <h5>{{ meal.name }}</h5>
+            <p>Price: {{ meal.price}}DH</p>
+            <p>Description: {{ meal.decoration }}</p><br>
             <button class="btn btn-primary">Add Product To Cart</button>
         </div>
     </div>
