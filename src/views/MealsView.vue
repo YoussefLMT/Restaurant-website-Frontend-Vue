@@ -21,13 +21,16 @@
                         <th scope="col">actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
+                 <div v-if="loading" class="spinner">
+                    <h3>Loading...</h3>
+                </div>
+                <tbody v-else>
+                    <tr v-for="meal in meals" :key="meal.id">
+                        <th scope="row">{{ meal.id }}</th>
+                        <td>{{ meal.name }}</td>
+                        <td>{{ meal.price }}</td>
+                        <td>{{ meal.category }}</td>
+                        <td>{{ meal.description }}</td>
                         <td><img src="@/assets/pexels-pixabay-326279.jpg"></td>
                     </tr>
                 </tbody>
@@ -68,10 +71,10 @@ export default {
     },
     computed: {
         meals() {
-            return store.meals.getters.meals
+            return store.getters['meals/meals']
         },
         loading() {
-            return store.meals.getters.loading
+            return store.getters['meals/loading']
         }
     },
 }
