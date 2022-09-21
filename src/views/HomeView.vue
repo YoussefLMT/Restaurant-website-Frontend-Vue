@@ -30,7 +30,7 @@
         <h2 class="title-txt">Our <span>Menu</span></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
-    <div v-if="loading" class="text-center mb-5">
+    <div v-if="loading" class="text-center mt-5 mb-5">
         <h3>Loading...</h3>
     </div>
     <div v-else class="content" v-for="meal in homeMeals" :key="meal.id">
@@ -99,15 +99,14 @@ export default {
         }
     },
     mounted() {
-        store.dispatch('home_meals/getHomeMeals')
-        console.log(this.homeMeals)
+        store.dispatch('homeMeals/getHomeMeals')
     },
     computed: {
         homeMeals() {
-            return store.getters['home_meals/homeMeals']
+            return store.getters['homeMeals/homeMeals']
         },
         loading() {
-            return store.getters.loading
+            return store.getters['homeMeals/loading']
         }
     },
 }

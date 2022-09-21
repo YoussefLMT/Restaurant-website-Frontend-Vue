@@ -8,7 +8,7 @@ const HomeMealsModule = {
     },
     getters: {
         homeMeals(state) {
-            return state.meals
+            return state.home_meals
         },
 
         loading(state) {

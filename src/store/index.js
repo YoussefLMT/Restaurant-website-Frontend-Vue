@@ -15,6 +15,6 @@ export default createStore({
   modules: {
     auth: AuthModule,
     meals: MealsModule,
-    home_meals: HomeMealsModule
+    homeMeals: HomeMealsModule
   }
 })
