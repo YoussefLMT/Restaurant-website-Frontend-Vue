@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import AuthModule from './AuthModule'
-
+import MealsModule from './MealsModule'
 export default createStore({
   state: {
   },
@@ -11,6 +11,7 @@ export default createStore({
   actions: {
   },
   modules: {
-    auth: AuthModule
+    auth: AuthModule,
+    meals: MealsModule
   }
 })

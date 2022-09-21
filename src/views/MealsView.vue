@@ -42,13 +42,14 @@ import Sidebar from '@/components/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebarState'
+import store from '@/store'
 
 export default {
     components: {
         Sidebar
     },
 
-     data() {
+    data() {
         return {
             sidebarWidth,
             meals: {
@@ -60,6 +61,17 @@ export default {
             },
             message: '',
             errors: '',
+        }
+    },
+    mounted() {
+        store.dispatch('meals/getMeals')
+    },
+    computed: {
+        products() {
+            return store.meals.getters.meals
+        },
+        loading() {
+            return store.meals.getters.loading
         }
     },
 }

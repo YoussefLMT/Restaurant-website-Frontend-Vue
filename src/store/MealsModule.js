@@ -1,3 +1,5 @@
+import axiosInstance from '../axios'
+
 const MealsModule = {
     namespaced: true,
     state: {
