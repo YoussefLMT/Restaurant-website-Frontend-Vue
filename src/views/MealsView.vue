@@ -113,7 +113,6 @@ export default {
     components: {
         Sidebar
     },
-
     data() {
         return {
             sidebarWidth,

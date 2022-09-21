@@ -25,11 +25,22 @@ import Swal from 'sweetalert2'
 
 export default {
     components: {
-        SidebarMenu
+        Sidebar
+    },
+    data() {
+        return {
+            sidebarWidth,
+        }
     },
 }
 </script>
 
 <style scoped>
+.meals {
+    padding: 20px
+}
 
+.me {
+    margin: 50px auto;
+}
 </style>

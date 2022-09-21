@@ -77,8 +77,8 @@ const routes = [
       requiresAuth: true
     },
     beforeEnter: (to, from, next) => {
-      if (store.state.user.token) {
-        if (store.state.user.role !== "admin") {
+      if (store.state.auth.user.token) {
+        if (store.state.auth.user.role !== "admin") {
           next({ name: 'notFound' });
         } else {
           next()
