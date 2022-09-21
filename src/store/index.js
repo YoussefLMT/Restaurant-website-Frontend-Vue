@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 import AuthModule from './AuthModule'
 import MealsModule from './MealsModule'
 import HomeMealsModule from './HomeMealsModule'
+import MealDetailsModule from './MealDetailsModule'
 
 export default createStore({
   state: {
@@ -15,6 +16,7 @@ export default createStore({
   modules: {
     auth: AuthModule,
     meals: MealsModule,
-    homeMeals: HomeMealsModule
+    homeMeals: HomeMealsModule,
+    mealDetails: MealDetailsModule
   }
 })
