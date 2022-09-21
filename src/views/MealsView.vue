@@ -56,22 +56,27 @@
                         <div class="mb-3">
                             <label for="fname" class="form-label">Name</label>
                             <input type="text" class="form-control" id="fname" v-model="meal.name">
+                            <span class="text-danger" v-if="errors.name">{{ errors.name[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">Price</label>
                             <input type="text" class="form-control" id="price" v-model="meal.price">
+                            <span class="text-danger" v-if="errors.price">{{ errors.price[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Category</label>
                             <input type="text" class="form-control" id="quantity" v-model="meal.category">
+                            <span class="text-danger" v-if="errors.category">{{ errors.category[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
                             <textarea class="form-control" id="description" rows="3" v-model="meal.description"></textarea>
+                            <span class="text-danger" v-if="errors.description">{{ errors.description[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
                             <input class="form-control" @change="onFileSelected" type="file" id="image">
+                            <span class="text-danger" v-if="errors.image">{{ errors.image[0] }}</span>
                         </div>
                     </form>
                 </div>
@@ -142,8 +147,7 @@ export default {
                     console.log(response.data.message)
                     store.dispatch('meals/getMeals')
                 } else {
-                    // this.errors = response.data.validation_err
-                    console.log(response.data.validation_err)
+                    this.errors = response.data.validation_err
                 }
                 this.meal.name = ''
                 this.meal.price = ''
