@@ -62,7 +62,6 @@
 import NavBar from '@/components/NavBar.vue'
 import Meal from '@/components/Meal.vue'
 import 'animate.css'
-import image from '@/assets/pexels-ella-olsson-1640777.jpg'
 import Feature from '@/components/Feature.vue'
 import image2 from '@/assets/diet.png'
 import image3 from '@/assets/delivery.png'
@@ -87,7 +86,6 @@ export default {
     },
     data() {
         return {
-            image,
             image2,
             image3,
             image4,
