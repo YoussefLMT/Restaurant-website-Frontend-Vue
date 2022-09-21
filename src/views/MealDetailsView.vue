@@ -11,8 +11,8 @@
             <router-link to="/">Go Back</router-link><br><br>
             <h5>{{ meal.name }}</h5>
             <p>Price: {{ meal.price}}DH</p>
-            <p>Description: {{ meal.decoration }}</p><br>
-            <button class="btn btn-primary">Add Product To Cart</button>
+            <p>Description: {{ meal.description }}</p><br>
+            <button class="btn">Add Product To Cart</button>
         </div>
     </div>
 </div>
@@ -39,5 +39,21 @@ export default {
 <style scoped>
 .details-img {
     height: 300px;
+}
+
+.btn {
+    font-size: 15px;
+    color: #fff;
+    background: #e74c3c;
+    display: inline-block;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.btn:hover {
+    background: hsl(6, 84%, 34%);
+    border: none;
 }
 </style>
