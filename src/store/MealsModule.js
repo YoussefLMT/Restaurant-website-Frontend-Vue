@@ -9,6 +9,10 @@ const MealsModule = {
         meals(state) {
             return state.meals
         },
+
+        loading(state) {
+            return state.loading
+        }
     },
     mutations: {
         getMeals(state, meals) {
