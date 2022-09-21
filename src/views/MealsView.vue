@@ -65,7 +65,13 @@
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Category</label>
-                            <input type="text" class="form-control" id="quantity" v-model="meal.category">
+                            <select class="form-select" v-model="meal.category">
+                                <option value="burger">Burger</option>
+                                <option value="pizza">Pizza</option>
+                                <option value="salad">Salad</option>
+                                <option value="sandwich">Sandwich</option>
+                                <option value="spaguetti">Spaguetti</option>
+                            </select> 
                             <span class="text-danger" v-if="errors.category">{{ errors.category[0] }}</span>
                         </div>
                         <div class="mb-3">
