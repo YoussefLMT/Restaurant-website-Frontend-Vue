@@ -74,7 +74,7 @@
                                 <option value="salad">Salad</option>
                                 <option value="sandwich">Sandwich</option>
                                 <option value="spaguetti">Spaguetti</option>
-                            </select> 
+                            </select>
                             <span class="text-danger" v-if="errors.category">{{ errors.category[0] }}</span>
                         </div>
                         <div class="mb-3">
@@ -154,7 +154,7 @@ export default {
                 const response = await axiosInstance.post("/add-meal", data)
                 if (response.data.status === 200) {
 
-                     const Toast = Swal.mixin({
+                    const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
                         showConfirmButton: false,
@@ -183,6 +183,15 @@ export default {
                 console.log(error)
             }
         },
+
+        async deleteMeal(id) {
+            try {
+                await axiosInstance.delete(`/delete-meal/${id}`)
+                store.dispatch('meals/getMeals')
+            } catch (error) {
+                console.log(error)
+            }
+        }
     }
 }
 </script>
