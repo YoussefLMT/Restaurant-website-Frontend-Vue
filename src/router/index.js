@@ -69,6 +69,25 @@ const routes = [
       }
     }
   },
+  {
+    path: '/update-meal/:id',
+    name: 'updateMeal',
+    component: () => import('../views/UpdateMealView.vue'),
+    meta: {
+      requiresAuth: true
+    },
+    beforeEnter: (to, from, next) => {
+      if (store.state.user.token) {
+        if (store.state.user.role !== "admin") {
+          next({ name: 'notFound' });
+        } else {
+          next()
+        }
+      } else {
+        next({ name: 'login' })
+      }
+    }
+  },
 ]
 
 const router = createRouter({
