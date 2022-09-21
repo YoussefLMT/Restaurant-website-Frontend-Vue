@@ -30,7 +30,7 @@ const HomeMealsModule = {
 
             axiosInstance.get('/specific-meals')
                 .then(response => {
-                    commit('getHomeMeals', response.data.meals)
+                    commit('getHomeMeals', response.data.home_meals)
                     commit('setLoading', false)
                 })
                 .catch(error => console.log(error))

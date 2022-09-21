@@ -71,6 +71,7 @@ import imageCat2 from '@/assets/pizza.png'
 import imageCat3 from '@/assets/salad.png'
 import imageCat4 from '@/assets/sandwich.png'
 import imageCat5 from '@/assets/spaguetti.png'
+import store from '@/store'
 
 export default {
     name: 'HomeView',
@@ -92,6 +93,17 @@ export default {
             imageCat3,
             imageCat4,
             imageCat5
+        }
+    },
+    mounted() {
+        store.dispatch('home_meals/getHomeMeals')
+    },
+    computed: {
+        homeMeals() {
+            return store.getters['home_meals/homeMeals']
+        },
+        loading() {
+            return store.getters.loading
         }
     },
 }
