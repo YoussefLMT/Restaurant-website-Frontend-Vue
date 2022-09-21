@@ -30,8 +30,11 @@
         <h2 class="title-txt">Our <span>Menu</span></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
-    <div class="content">
-        <Meal :image="image" name="wajba" price="30" />
+    <div v-if="loading" class="text-center mb-5">
+        <h3>Loading...</h3>
+    </div>
+    <div v-else class="content" v-for="meal in homeMeals" :key="meal.id">
+        <Meal :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" />
     </div>
     <div class="title">
         <a href="#" class="btn">See All</a>
@@ -97,6 +100,7 @@ export default {
     },
     mounted() {
         store.dispatch('home_meals/getHomeMeals')
+        console.log(this.homeMeals)
     },
     computed: {
         homeMeals() {
