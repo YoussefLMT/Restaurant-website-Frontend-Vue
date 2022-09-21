@@ -35,7 +35,6 @@ const HomeMealsModule = {
                 })
                 .catch(error => console.log(error))
         },
-
     },
 }
 
