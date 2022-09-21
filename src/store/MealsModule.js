@@ -5,7 +5,6 @@ const MealsModule = {
     state: {
         meals: [],
         loading: false
-
     },
     getters: {
         meals(state) {

@@ -67,7 +67,7 @@ export default {
         store.dispatch('meals/getMeals')
     },
     computed: {
-        products() {
+        meals() {
             return store.meals.getters.meals
         },
         loading() {
