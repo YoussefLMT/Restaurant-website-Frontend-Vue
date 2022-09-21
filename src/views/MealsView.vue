@@ -103,6 +103,7 @@ import {
 } from '@/components/sidebarState'
 import store from '@/store'
 import axiosInstance from '../axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -149,8 +150,23 @@ export default {
             try {
                 const response = await axiosInstance.post("/add-meal", data)
                 if (response.data.status === 200) {
-                    // this.message = response.data.message
-                    console.log(response.data.message)
+
+                     const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+                    
                     store.dispatch('meals/getMeals')
                 } else {
                     this.errors = response.data.validation_err
