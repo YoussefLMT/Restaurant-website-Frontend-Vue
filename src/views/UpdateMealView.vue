@@ -67,6 +67,19 @@ export default {
             errors: '',
         }
     },
+    mounted() {
+        this.getMeal()
+    },
+    methods: {
+        async getMeal() {
+            try {
+                const response = await axiosInstance.get(`/get-meal/${this.$route.params.id}`)
+                this.meal = response.data.meal
+            } catch (error) {
+                console.log(error)
+            }
+        },
+    }
 }
 </script>
 
