@@ -15,7 +15,7 @@
                         <th scope="col">id</th>
                         <th scope="col">name</th>
                         <th scope="col">price</th>
-                        <th scope="col">quantity</th>
+                        <th scope="col">category</th>
                         <th scope="col">description</th>
                         <th scope="col">image</th>
                         <th scope="col">actions</th>
@@ -42,15 +42,26 @@ import Sidebar from '@/components/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebarState'
+
 export default {
     components: {
         Sidebar
     },
-    setup() {
+
+     data() {
         return {
-            sidebarWidth
+            sidebarWidth,
+            meals: {
+                name: '',
+                price: '',
+                category: '',
+                description: '',
+                image: ''
+            },
+            message: '',
+            errors: '',
         }
-    }
+    },
 }
 </script>
 
