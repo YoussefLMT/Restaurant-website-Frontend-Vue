@@ -1,7 +1,6 @@
 <template>
-
 <div class="container mt-5">
-    
+
     <div class="row">
         <div class="col-md-6">
             <img class="details-img" src="@/assets/pexels-pixabay-326279.jpg">
@@ -15,13 +14,23 @@
         </div>
     </div>
 </div>
-
 </template>
 
 <script>
+import store from '@/store'
 
 export default {
-
+    mounted() {
+        store.dispatch('MealDetails/getMeal', this.$route.params.id)
+    },
+    computed: {
+        meal() {
+            return store.getters['MealDetails/meal']
+        },
+        loading() {
+            return store.getters['MealDetails/loading']
+        }
+    },
 }
 </script>
 
