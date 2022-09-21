@@ -91,6 +91,7 @@ import {
     sidebarWidth
 } from '@/components/sidebarState'
 import store from '@/store'
+import axiosInstance from '../axios'
 
 export default {
     components: {
@@ -122,9 +123,36 @@ export default {
             return store.getters['meals/loading']
         }
     },
-    methods:{
+    methods: {
         onFileSelected(e) {
             this.meal.image = e.target.files[0]
+        },
+
+        async addNewMeal() {
+            const data = new FormData()
+            data.append('name', this.meal.name)
+            data.append('price', this.meal.price)
+            data.append('category', this.meal.category)
+            data.append('description', this.meal.description)
+            data.append('image', this.meal.image)
+            try {
+                const response = await axiosInstance.post("/add-meal", data)
+                if (response.data.status === 200) {
+                    // this.message = response.data.message
+                    console.log(response.data.message)
+                    store.dispatch('meals/getMeals')
+                } else {
+                    // this.errors = response.data.validation_err
+                    console.log(response.data.validation_err)
+                }
+                this.meal.name = ''
+                this.meal.price = ''
+                this.meal.category = ''
+                this.meal.description = ''
+
+            } catch (error) {
+                console.log(error)
+            }
         },
     }
 }
