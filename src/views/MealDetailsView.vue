@@ -16,12 +16,18 @@
         </div>
     </div>
 </div>
+
+<Footer />
 </template>
 
 <script>
+import Footer from '@/components/Footer.vue'
 import store from '@/store'
 
 export default {
+    components: {
+        Footer
+    },
     mounted() {
         store.dispatch('mealDetails/getMeal', this.$route.params.id)
     },
