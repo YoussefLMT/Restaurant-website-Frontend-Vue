@@ -35,9 +35,9 @@ export default {
 
 <style>
 :root {
-    --sidebar-bg-color: #2f855a;
-    --sidebar-item-hover: #38a169;
-    --sidebar-item-active: #276749;
+    --sidebar-bg-color: #1e293b;
+    --sidebar-item-hover: #64748b;
+    --sidebar-item-active: #334155;
 }
 </style>
 
