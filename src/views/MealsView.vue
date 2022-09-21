@@ -21,7 +21,7 @@
                         <th scope="col">actions</th>
                     </tr>
                 </thead>
-                 <div v-if="loading" class="spinner">
+                 <div v-if="loading">
                     <h3>Loading...</h3>
                 </div>
                 <tbody v-else>
@@ -31,7 +31,7 @@
                         <td>{{ meal.price }}</td>
                         <td>{{ meal.category }}</td>
                         <td>{{ meal.description }}</td>
-                        <td><img src="@/assets/pexels-pixabay-326279.jpg"></td>
+                        <td><img :src="'http://127.0.0.1:8000/' + meal.image"></td>
                     </tr>
                 </tbody>
             </table>
