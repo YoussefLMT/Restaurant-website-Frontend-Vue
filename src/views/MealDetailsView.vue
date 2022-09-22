@@ -7,15 +7,15 @@
     <div v-if="loading" class="text-center mb-5">
         <h3>Loading...</h3>
     </div>
-    <div v-else class="row">
-        <div class="col-md-6">
+    <div v-else class="row d-flex justify-content-center">
+        <div class="col-md-4">
             <img class="details-img" :src="'http://127.0.0.1:8000/' + meal.image">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <router-link to="/">Go Back</router-link><br><br>
             <h5>{{ meal.name }}</h5>
-            <p>Price: {{ meal.price}}DH</p>
-            <p>Description: {{ meal.description }}</p><br>
+            <p><span class="title">Price:</span> {{ meal.price}}DH</p>
+            <p><span class="title">Description:</span> {{ meal.description }}</p><br>
             <button class="btn">Add Product To Cart</button>
         </div>
     </div>
@@ -71,11 +71,19 @@ export default {
 
 .navbar{
     background-color: blue;
-    padding: 45px;
+    padding: 45px 0px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
 }
 
 .container{
-    margin-top: 150px;
+    margin-top: 80px;
+}
+
+p{
+    font-size: 20px;
+}
+
+.title{
+    font-weight: bold;
 }
 </style>
