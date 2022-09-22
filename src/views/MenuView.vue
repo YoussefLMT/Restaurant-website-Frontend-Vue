@@ -27,6 +27,17 @@ export default {
         Footer,
         Meal
     },
+    mounted() {
+        store.dispatch('meals/getMeals')
+    },
+    computed: {
+        meals() {
+            return store.getters['meals/meals']
+        },
+        loading() {
+            return store.getters['meals/loading']
+        }
+    },
 }
 </script>
 
