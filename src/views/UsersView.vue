@@ -35,7 +35,7 @@
                         <td>{{ user.role }}</td>
                          <td>
                             <button type="button" @click="deleteUser(user.id)" class="btn btn-danger">Delete</button>
-                            <router-link :to="{ name: 'updateUser', params: {id: user.id }}" class="btn btn-warning">Update</router-link>
+                            <!-- <router-link :to="{ name: 'updateUser', params: {id: user.id }}" class="btn btn-warning">Update</router-link> -->
                         </td>
                     </tr>
                 </tbody>
@@ -156,6 +156,30 @@ export default {
                 console.log(error)
             }
         },
+
+        async deleteUser(id) {
+            try {
+                const response = await axiosInstance.delete(`/delete-user/${id}`)
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                    icon: 'success',
+                    title: response.data.message
+                })
+                store.dispatch('users/getUsers')
+            } catch (error) {
+                console.log(error)
+            }
+        }
     }
 }
 </script>
