@@ -32,6 +32,11 @@ const routes = [
     component: () => import('../views/NotFoundView.vue')
   },
   {
+    path: '/menu',
+    name: 'menu',
+    component: () => import('../views/MenuView.vue')
+  },
+  {
     path: '/menu/:id',
     name: 'mealDetails',
     component: () => import('../views/MealDetailsView.vue')
