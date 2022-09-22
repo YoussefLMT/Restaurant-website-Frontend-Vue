@@ -72,7 +72,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" @click="addNewUser" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -117,6 +117,25 @@ export default {
             return store.getters['users/loading']
         }
     },
+     methods: {
+        async addNewUser() {
+            try {
+                const response = await axiosInstance.post("/add-user", this.user)
+                if (response.data.status === 200) {
+                    this.message = response.data.message
+                    store.dispatch('getUsers')
+                } else {
+                    this.errors = response.data.validation_err
+                }
+                this.user.name = ''
+                this.user.email = ''
+                this.user.password = ''
+                this.user.role = ''
+            } catch (error) {
+                console.log(error)
+            }
+        },
+    }
 }
 </script>
 
