@@ -3,6 +3,7 @@ import AuthModule from './AuthModule'
 import MealsModule from './MealsModule'
 import HomeMealsModule from './HomeMealsModule'
 import MealDetailsModule from './MealDetailsModule'
+import UsersModule from './UsersModule'
 
 export default createStore({
   state: {
@@ -17,6 +18,7 @@ export default createStore({
     auth: AuthModule,
     meals: MealsModule,
     homeMeals: HomeMealsModule,
-    mealDetails: MealDetailsModule
+    mealDetails: MealDetailsModule,
+    users: UsersModule
   }
 })
