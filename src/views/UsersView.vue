@@ -20,12 +20,15 @@
                         <th scope="col">actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>tt</td>
-                        <td>tt</td>
-                        <td>tt</td>
+                 <div v-if="loading" class="spinner">
+                    <h3>Loading...</h3>
+                </div>
+                <tbody v-else>
+                    <tr v-for="user in users" :key="user.id">
+                        <th scope="row">{{ user.id }}</th>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.role }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -50,6 +53,17 @@ export default {
     data() {
         return {
             sidebarWidth,
+        }
+    },
+    mounted() {
+        store.dispatch('users/getUsers')
+    },
+    computed: {
+        users() {
+            return store.getters['users/users']
+        },
+        loading() {
+            return store.getters['users/loading']
         }
     },
 }
