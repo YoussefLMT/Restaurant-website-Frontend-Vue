@@ -198,7 +198,8 @@ export default {
 
 <style scoped>
 .meals {
-    padding: 20px
+    padding: 20px;
+    transition: 0.3s ease;
 }
 
 .me {

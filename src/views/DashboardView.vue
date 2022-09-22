@@ -8,17 +8,24 @@
 
 <script>
 import Sidebar from '@/components/SideBar.vue'
-import { sidebarWidth } from '@/components/sidebarState'
+import {
+    sidebarWidth
+} from '@/components/sidebarState'
 export default {
-  components: { Sidebar },
-  setup() {
-    return { sidebarWidth }
-  }
+    components: {
+        Sidebar
+    },
+    setup() {
+        return {
+            sidebarWidth
+        }
+    }
 }
 </script>
 
 <style scoped>
-.dashboard{
-    padding: 20px
+.dashboard {
+    padding: 20px;
+    transition: 0.3s ease;
 }
 </style>
