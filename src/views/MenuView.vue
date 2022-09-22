@@ -12,7 +12,7 @@
         <h3>Loading...</h3>
     </div>
     <div v-else class="content">
-        <Meal v-for="meal in mals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id"/>
+        <Meal v-for="meal in meals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id"/>
     </div>
 </div>
 
