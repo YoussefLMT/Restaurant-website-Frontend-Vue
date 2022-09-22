@@ -6,7 +6,6 @@
 <div class="container">
     <div class="row">
         <div class="contact">
-            <div class="w3-container" id="contact">
                 <h2 class="text-center mb-3">Contact us</h2>
                 <p>If you have any questions, do not hesitate to ask them.</p>
                 <i class="fa fa-map-marker w3-text-blue mb-2" style="width: 30px"></i>
@@ -24,7 +23,6 @@
                         <button class="w3-button w3-black w3-padding-large" type="button">SEND MESSAGE</button>
                     </p>
                 </form>
-            </div>
         </div>
     </div>
 </div>
@@ -53,4 +51,11 @@ export default {
     width: 600px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.navbar {
+    background-color: blue;
+    padding: 45px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+}
+
 </style>
