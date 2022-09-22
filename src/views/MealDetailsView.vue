@@ -15,7 +15,14 @@
             <router-link to="/">Go Back</router-link><br><br>
             <h5>{{ meal.name }}</h5>
             <p><span class="title">Price:</span> {{ meal.price}}DH</p>
-            <p><span class="title">Description:</span> {{ meal.description }}</p><br>
+            <p><span class="title">Description:</span> {{ meal.description }}</p>
+            <!-- <label>Quantity:</label>
+            <input type="number"><br><br> -->
+            <div class="quantity-toggle">
+                <button @click="decrement()">&mdash;</button>
+                <input type="text" :value="quantity" readonly>
+                <button @click="increment()">&#xff0b;</button>
+            </div>
             <button class="btn">Add Product To Cart</button>
         </div>
     </div>
@@ -69,21 +76,23 @@ export default {
     border: none;
 }
 
-.navbar{
+.navbar {
     background-color: blue;
     padding: 45px 0px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
 }
 
-.container{
+.container {
     margin-top: 80px;
 }
 
-p{
+p {
     font-size: 20px;
 }
 
-.title{
+.title {
     font-weight: bold;
 }
+
+
 </style>
