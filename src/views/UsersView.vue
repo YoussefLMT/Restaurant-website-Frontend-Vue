@@ -52,14 +52,17 @@
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" v-model="user.name">
+                            <span class="text-danger" v-if="errors.name">{{ errors.name[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" v-model="user.email">
+                            <span class="text-danger" v-if="errors.email">{{ errors.email[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="passowrd" class="form-label">Password</label>
                             <input type="passowrd" class="form-control" id="passowrd" v-model="user.password">
+                            <span class="text-danger" v-if="errors.passowrd">{{ errors.passowrd[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Role</label>
@@ -67,6 +70,7 @@
                                 <option value="user">user</option>
                                 <option value="admin">admin</option>
                             </select>
+                            <span class="text-danger" v-if="errors.role">{{ errors.role[0] }}</span>
                         </div>
                     </form>
                 </div>
@@ -102,7 +106,6 @@ export default {
                 password: '',
                 role: '',
             },
-            message: '',
             errors: '',
         }
     },
@@ -117,13 +120,27 @@ export default {
             return store.getters['users/loading']
         }
     },
-     methods: {
+    methods: {
         async addNewUser() {
             try {
                 const response = await axiosInstance.post("/add-user", this.user)
                 if (response.data.status === 200) {
-                    this.message = response.data.message
-                    store.dispatch('getUsers')
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+                    store.dispatch('users/getUsers')
                 } else {
                     this.errors = response.data.validation_err
                 }
