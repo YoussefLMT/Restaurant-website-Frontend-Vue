@@ -41,6 +41,11 @@ export default {
         NavBar,
         Footer
     },
+    data() {
+        return {
+            quantity: 1
+        }
+    },
     mounted() {
         store.dispatch('mealDetails/getMeal', this.$route.params.id)
     },
