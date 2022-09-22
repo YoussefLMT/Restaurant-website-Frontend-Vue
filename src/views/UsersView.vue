@@ -96,6 +96,14 @@ export default {
     data() {
         return {
             sidebarWidth,
+            user: {
+                name: '',
+                email: '',
+                password: '',
+                role: '',
+            },
+            message: '',
+            errors: '',
         }
     },
     mounted() {
