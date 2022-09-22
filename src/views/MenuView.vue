@@ -1,12 +1,24 @@
-<template >
-<div>
-<h1>menu</h1>
+<template>
+<div class="navbar">
+    <NavBar />
 </div>
+
+<div>
+    <h1>menu</h1>
+</div>
+
+<Footer />
 </template>
 
 <script>
-export default {
+import NavBar from '@/components/NavBar.vue'
+import Footer from '@/components/Footer.vue'
 
+export default {
+    components: {
+        NavBar,
+        Footer
+    },
 }
 </script>
 
