@@ -48,6 +48,18 @@ export default {
     components: {
         Sidebar
     },
+    data() {
+        return {
+            sidebarWidth,
+            user: {
+                name: '',
+                email: '',
+                password: '',
+                role: ''
+            },
+            errors: ''
+        }
+    },
 }
 </script>
 
