@@ -3,6 +3,7 @@
 
     <SidebarLink to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLink>
     <SidebarLink to="/meals" icon="fa-solid fa-burger">Meals</SidebarLink>
+    <SidebarLink to="/users" icon="fa-solid fa-users">Users</SidebarLink>
 
     <span class="collapse-icon" :class="{ 'rotate-180': collapsed }" @click="toggleSidebar">
         <i class="fas fa-angle-double-left" />
