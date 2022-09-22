@@ -1,5 +1,9 @@
 <template>
-<div class="container mt-5">
+<div class="navbar">
+    <NavBar />
+</div>
+
+<div class="container">
     <div v-if="loading" class="text-center mb-5">
         <h3>Loading...</h3>
     </div>
@@ -21,11 +25,13 @@
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 import store from '@/store'
 
 export default {
     components: {
+        NavBar,
         Footer
     },
     mounted() {
@@ -61,5 +67,15 @@ export default {
 .btn:hover {
     background: hsl(6, 84%, 34%);
     border: none;
+}
+
+.navbar{
+    background-color: blue;
+    padding: 45px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+}
+
+.container{
+    margin-top: 150px;
 }
 </style>
