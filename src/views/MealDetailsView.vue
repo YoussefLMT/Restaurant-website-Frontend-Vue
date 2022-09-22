@@ -57,6 +57,12 @@ export default {
             return store.getters['mealDetails/loading']
         }
     },
+    methods: {
+        increment() {
+            this.quantity++
+        },
+        
+    }
 }
 </script>
 
