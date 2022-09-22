@@ -61,7 +61,14 @@ export default {
         increment() {
             this.quantity++
         },
-        
+
+        decrement() {
+            if (this.quantity === 1) {
+                alert('Negative quantity not allowed')
+            } else {
+                this.quantity--
+            }
+        }
     }
 }
 </script>
