@@ -194,10 +194,6 @@ export default {
     margin: 50px auto;
 }
 
-img {
-    width: 50px;
-}
-
 .btn-add {
     float: right
 }
