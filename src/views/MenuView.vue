@@ -8,8 +8,11 @@
 </div>
 
 <div class="menu">
-    <div class="content">
-        <Meal image="@/assets/pexels-pixabay-326279.jpg" name="meal" price="20" id="88" />
+    <div v-if="loading" class="text-center mt-5 mb-5">
+        <h3>Loading...</h3>
+    </div>
+    <div v-else class="content">
+        <Meal v-for="meal in mals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id"/>
     </div>
 </div>
 
@@ -20,6 +23,7 @@
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 import Meal from '@/components/Meal.vue'
+import store from '@/store'
 
 export default {
     components: {
