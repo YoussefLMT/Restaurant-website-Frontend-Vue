@@ -37,7 +37,7 @@
         <Meal v-for="meal in homeMeals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id"/>
     </div>
     <div class="title">
-        <router-link href="/menu" class="btn">See All</router-link>
+        <router-link to="/menu" class="btn">See All</router-link>
     </div>
 </section>
 
