@@ -29,11 +29,15 @@
                     <router-link class="link" to="/register">Register</router-link>
                 </li>
             </div>
-            <div v-else>
-                <li class="nav-item">
-                    <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
-                </li>
-            </div>
+            <li v-else>
+                <router-link class="link" to="/cart">Cart (0)</router-link>
+            </li>
+            <li>
+                <router-link class="link" to="/my-orders">My Orders</router-link>
+            </li>
+            <li>
+                <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
+            </li>
         </ul>
 
         <div class="icon">
@@ -67,11 +71,15 @@
                     </li>
                 </div>
 
-                <div v-else>
-                    <li class="nav-item">
-                        <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
-                    </li>
-                </div>
+                <li v-else>
+                    <router-link class="link" to="/cart">Cart (0)</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/my-orders">My Orders</router-link>
+                </li>
+                <li>
+                    <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
+                </li>
             </ul>
         </transition>
     </nav>
