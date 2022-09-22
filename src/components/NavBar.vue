@@ -9,6 +9,9 @@
                 <router-link class="link" to="/">Home</router-link>
             </li>
             <li>
+                <router-link class="link" to="/menu">Menu</router-link>
+            </li>
+            <li>
                 <router-link class="link" to="/about">About</router-link>
             </li>
             <li>
@@ -41,6 +44,9 @@
             <ul v-show="mobileNav" class="dropdown-nav">
                 <li>
                     <router-link class="link" to="/">Home</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/menu">Menu</router-link>
                 </li>
                 <li>
                     <router-link class="link" to="/#">About</router-link>

@@ -8,7 +8,7 @@
                 Sed autem voluptate itaque fugit possimus veritatis,
                 totam voluptates. Possimus molestias quisquam unde
             </p>
-            <router-link to="#" class="btn">Our Menu</router-link>
+            <router-link to="/menu" class="btn">Our Menu</router-link>
         </div>
     </div>
 </section>
@@ -37,7 +37,7 @@
         <Meal v-for="meal in homeMeals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id"/>
     </div>
     <div class="title">
-        <a href="#" class="btn">See All</a>
+        <router-link href="/menu" class="btn">See All</router-link>
     </div>
 </section>
 
