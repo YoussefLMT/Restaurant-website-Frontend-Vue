@@ -28,7 +28,7 @@
                         <option value="admin">admin</option>
                     </select>
                 </div>
-                <button type="button" class="btn btn-primary">Update User</button>
+                <button type="button" @click="updateUser" class="btn btn-primary">Update User</button>
             </form>
         </div>
     </div>
@@ -40,7 +40,6 @@ import Sidebar from '@/components/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebarState'
-import store from '@/store'
 import axiosInstance from '../axios'
 import Swal from 'sweetalert2'
 
@@ -60,6 +59,9 @@ export default {
             errors: ''
         }
     },
+    mounted(){
+        this.getUser()
+    },
     methods: {
         async getUser() {
             try {
@@ -69,6 +71,33 @@ export default {
                 console.log(error)
             }
         },
+
+        async updateUser() {
+            try {
+                const response = await axiosInstance.put(`/update-user/${this.$route.params.id}`, this.user)
+                if (response.data.status === 200) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+                } else if (response.data.status === 422) {
+                    this.errors = response.data.validation_err
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
     }
 }
 </script>
