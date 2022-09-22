@@ -16,13 +16,11 @@
             <h5>{{ meal.name }}</h5>
             <p><span class="title">Price:</span> {{ meal.price}}DH</p>
             <p><span class="title">Description:</span> {{ meal.description }}</p>
-            <!-- <label>Quantity:</label>
-            <input type="number"><br><br> -->
             <div class="quantity-toggle">
                 <button @click="decrement()">&mdash;</button>
                 <input type="text" :value="quantity" readonly>
                 <button @click="increment()">&#xff0b;</button>
-            </div>
+            </div><br>
             <button class="btn">Add Product To Cart</button>
         </div>
     </div>
@@ -126,11 +124,12 @@ p {
 }
 
 .quantity-toggle button {
-    border: 2px solid #ddd;
+    border: 0;
     padding: .5rem;
-    background: #f5f5f5;
-    color: #888;
+    background: #e74c3c;
+    color: black;
     font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
 }
 </style>
