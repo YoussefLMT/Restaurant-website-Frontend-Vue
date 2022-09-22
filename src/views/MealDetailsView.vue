@@ -125,9 +125,9 @@ p {
 
 .quantity-toggle button {
     border: 0;
-    padding: .5rem;
+    padding: .2rem;
     background: #e74c3c;
-    color: black;
+    color: white;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
