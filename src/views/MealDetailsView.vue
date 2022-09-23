@@ -21,7 +21,7 @@
                 <input type="text" :value="quantity" readonly>
                 <button @click="increment()">&#xff0b;</button>
             </div><br>
-            <button class="btn">Add Product To Cart</button>
+            <button @click="addTocart" class="btn">Add Product To Cart</button>
         </div>
     </div>
 </div>
@@ -34,6 +34,8 @@ import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 import store from '@/store'
 import Circle from 'vue-loading-spinner/src/components/Circle'
+import axiosInstance from '../axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -67,6 +69,64 @@ export default {
                 this.quantity = 1
             } else {
                 this.quantity--
+            }
+        },
+
+        async addTocart() {
+            if (!localStorage.getItem('token')) {
+                this.$router.push('/login')
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Please login first'
+                })
+            } else {
+                const response = await axiosInstance.post(`add-to-cart/${this.$route.params.id}`, {
+                    quantity: this.quantity
+                })
+                if (response.data.status === 406) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'error',
+                        title: response.data.message
+                    })
+                } else if (response.data.status === 200) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+                }
             }
         }
     }
