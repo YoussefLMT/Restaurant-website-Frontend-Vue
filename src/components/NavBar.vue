@@ -119,6 +119,11 @@ export default {
             return
         },
 
+        async getCartCount() {
+            const response = await axiosInstance.get('/cart-count')
+            this.cart_count = response.data.cart_count
+        },
+
         async logOut() {
             try {
                 const response = await axiosInstance.post("/logout")
