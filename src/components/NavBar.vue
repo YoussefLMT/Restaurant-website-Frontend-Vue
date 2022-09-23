@@ -95,7 +95,8 @@ export default {
         return {
             mobile: null,
             mobileNav: null,
-            windowWidth: null
+            windowWidth: null,
+            cart_count: ''
         }
     },
     created() {
