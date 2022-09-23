@@ -5,16 +5,19 @@
 
 <div class="container mt-5">
     <h3 class="text-center">Walcome in your cart</h3>
-    <div>
-        <!-- <div class="empty-cart mt-5">
+    <div v-if="loading" class="text-center mb-5">
+        <h3>Loading...</h3>
+    </div>
+    <div v-else>
+        <div v-if="cartMealsLenth === 0"  class="empty-cart mt-5">
             <div class="row">
                 <div class="col-md-">
-                    <img src="@/assets/empty_cart.png">
+                    <img src="@/assets/cart.png">
                     <h3>Your cart is currently empty</h3>
-                    <router-link to="/shop" class="btn btn-warning mt-3">Return To Shop</router-link>
+                    <router-link to="/menu" class="btn btn-warning mt-3">Return To Menu</router-link>
                 </div>
             </div>
-        </div> -->
+        </div>
         <router-link to="/order" class="btn btn-primary">Order Now</router-link><br><br>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4" v-for="cartMeal in cartMeals" :key="cartMeal.id">
@@ -55,7 +58,7 @@ export default {
         cartMeals() {
             return store.getters['cart/cartMeals']
         },
-        cartMealsLenth() {
+        cartMealsLength() {
             return this.cartMeals.length
         },
         loading() {
