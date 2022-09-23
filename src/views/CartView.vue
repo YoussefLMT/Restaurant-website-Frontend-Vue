@@ -26,7 +26,7 @@
                     <div class="text">
                         <h3>{{ cartMeal.name }}</h3>
                         <p>{{ cartMeal.price}} DH</p>
-                        <button type="button" class="btn-show">Remove</button>
+                        <button type="button" class="btn">Remove</button>
                     </div>
                 </div>
 
@@ -54,6 +54,9 @@ export default {
     computed: {
         cartMeals() {
             return store.getters['cart/cartMeals']
+        },
+        cartMealsLenth() {
+            return this.cartMeals.length
         },
         loading() {
             return store.getters['cart/loading']
@@ -104,7 +107,7 @@ export default {
     color: #e74c3c;
 }
 
-.btn-show {
+.btn {
     font-size: 15px;
     color: #fff;
     background: #e74c3c;
@@ -116,7 +119,7 @@ export default {
     border: none;
 }
 
-.btn-show:hover {
+.btn:hover {
     background: hsl(6, 84%, 34%);
     border: none;
 }
