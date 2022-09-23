@@ -9,7 +9,7 @@
         <Circle />
     </div>
     <div v-else>
-        <div v-if="cartMealsLenth === 0"  class="empty-cart mt-5">
+        <div v-if="cartMealsLenth === 0" class="empty-cart mt-5">
             <div class="row">
                 <div class="col-md-">
                     <img src="@/assets/cart.png">
@@ -29,7 +29,7 @@
                     <div class="text">
                         <h3>{{ cartMeal.name }}</h3>
                         <p>{{ cartMeal.price}} DH</p>
-                        <button type="button" class="btn">Remove</button>
+                        <button type="button" @click="removeMeal(meal.cart_id)" class="btn">Remove</button>
                     </div>
                 </div>
 
@@ -67,6 +67,35 @@ export default {
             return store.getters['cart/loading']
         }
     },
+    methods: {
+        async removeMeal(id) {
+            const response = await axiosInstance.delete(`/remove-meal/${id}`)
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            if (response.data.status === 200) {
+                Toast.fire({
+                    icon: 'success',
+                    title: response.data.message
+                })
+                store.dispatch('cart/getCartMeals')
+            } else if (response.data.status === 404) {
+                Toast.fire({
+                    icon: 'error',
+                    title: response.data.message
+                })
+                store.dispatch('cart/getCartMeals')
+            }
+        }
+    }
 }
 </script>
 
