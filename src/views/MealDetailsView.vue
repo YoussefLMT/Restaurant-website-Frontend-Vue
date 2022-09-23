@@ -5,7 +5,7 @@
 
 <div class="container">
     <div v-if="loading" class="text-center mb-5">
-        <h3>Loading...</h3>
+        <Circle />
     </div>
     <div v-else class="row d-flex justify-content-center">
         <div class="col-md-4">
@@ -33,11 +33,13 @@
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 import store from '@/store'
+import Circle from 'vue-loading-spinner/src/components/Circle'
 
 export default {
     components: {
         NavBar,
-        Footer
+        Footer,
+        Circle
     },
     data() {
         return {
