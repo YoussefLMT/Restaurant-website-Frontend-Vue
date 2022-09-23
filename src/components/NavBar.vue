@@ -30,7 +30,7 @@
                 </li>
             </div>
             <li v-else>
-                <router-link class="link" to="/cart">Cart (0)</router-link>
+                <router-link class="link" to="/cart">Cart ({{cart_count}})</router-link>
             </li>
             <li>
                 <router-link class="link" to="/my-orders">My Orders</router-link>
@@ -72,7 +72,7 @@
                 </div>
 
                 <li v-else>
-                    <router-link class="link" to="/cart">Cart (0)</router-link>
+                    <router-link class="link" to="/cart">Cart ({{cart_count}})</router-link>
                 </li>
                 <li>
                     <router-link class="link" to="/my-orders">My Orders</router-link>
