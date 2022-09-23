@@ -32,7 +32,6 @@
                         <button type="button" @click="removeMeal(cartMeal.cart_id)" class="btn">Remove</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
