@@ -19,5 +19,9 @@ export default {
 </script>
 
 <style scoped>
-
+.navbar {
+    background-color: blue;
+    padding: 45px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+}
 </style>
