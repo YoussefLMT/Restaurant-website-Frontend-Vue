@@ -9,7 +9,7 @@
         <Circle />
     </div>
     <div v-else>
-        <div v-if="cartMealsLenth === 0" class="empty-cart mt-5">
+        <div v-if="cartMealsLength === 0" class="empty-cart mt-5">
             <div class="row">
                 <div class="col-md-">
                     <img src="@/assets/cart.png">
@@ -29,7 +29,7 @@
                     <div class="text">
                         <h3>{{ cartMeal.name }}</h3>
                         <p>{{ cartMeal.price}} DH</p>
-                        <button type="button" @click="removeMeal(meal.cart_id)" class="btn">Remove</button>
+                        <button type="button" @click="removeMeal(cartMeal.cart_id)" class="btn">Remove</button>
                     </div>
                 </div>
 
@@ -46,6 +46,8 @@ import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 import store from '@/store'
 import Circle from 'vue-loading-spinner/src/components/Circle'
+import axiosInstance from '@/axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -156,5 +158,14 @@ export default {
 .btn:hover {
     background: hsl(6, 84%, 34%);
     border: none;
+}
+
+.empty-cart {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.empty-cart img {
+    width: 100%;
 }
 </style>
