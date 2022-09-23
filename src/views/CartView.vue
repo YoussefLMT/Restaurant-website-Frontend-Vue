@@ -47,6 +47,17 @@ export default {
         NavBar,
         Footer
     },
+    mounted() {
+        store.dispatch('cart/getCartMeals')
+    },
+    computed: {
+        cartMeals() {
+            return store.getters['cart/cartMeals']
+        },
+        loading() {
+            return store.getters['cart/loading']
+        }
+    },
 }
 </script>
 

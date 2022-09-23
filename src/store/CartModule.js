@@ -9,7 +9,7 @@ const CartModule = {
     getters: {
         cartMeals(state) {
             return state.cart_meals
-          },
+        },
 
         loading(state) {
             return state.loading
@@ -18,7 +18,7 @@ const CartModule = {
     mutations: {
         getCartMeals(state, cart_meals) {
             state.cart_meals = cart_meals
-          },
+        },
 
         setLoading(state, loading) {
             state.loading = loading
@@ -27,14 +27,14 @@ const CartModule = {
     actions: {
         getCartMeals({ commit }) {
             commit('setLoading', true)
-      
+
             axiosInstance.get('/get-cart-meals')
-              .then(response => {
-                commit('getCartMeals', response.data.cart_meals)
-                commit('setLoading', false)
-              })
-              .catch(error => console.log(error))
-          },
+                .then(response => {
+                    commit('getCartMeals', response.data.cart_meals)
+                    commit('setLoading', false)
+                })
+                .catch(error => console.log(error))
+        },
     },
 }
 
