@@ -13,12 +13,12 @@
             <div class="row">
                 <div class="col-md-">
                     <img src="@/assets/cart.png">
-                    <h3>Your cart is currently empty</h3>
+                    <h3 class="text-center">Your cart is currently empty</h3>
                     <router-link to="/menu" class="btn btn-warning mt-3">Return To Menu</router-link>
                 </div>
             </div>
         </div>
-        <router-link to="/order" class="btn btn-primary">Order Now</router-link><br><br>
+        <router-link v-if="cartMealsLength > 0" to="/order" class="btn btn-primary">Order Now</router-link><br><br>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4" v-for="cartMeal in cartMeals" :key="cartMeal.id">
 
@@ -161,7 +161,7 @@ export default {
 }
 
 .empty-cart {
-    width: 300px;
+    width: 250px;
     margin: 0 auto;
 }
 
