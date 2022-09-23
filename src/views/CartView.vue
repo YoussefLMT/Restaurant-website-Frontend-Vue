@@ -17,15 +17,15 @@
         </div> -->
         <router-link to="/order" class="btn btn-primary">Order Now</router-link><br><br>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4" v-for="cartMeal in cartMeals" :key="cartMeal.id">
 
                 <div class="box">
                     <div class="imgbox">
-                        <img src="@/assets/pexels-pixabay-326279.jpg">
+                        <img :src="'http://127.0.0.1:8000/' + cartMeal.image">
                     </div>
                     <div class="text">
-                        <h3>tt</h3>
-                        <p>66 DH</p>
+                        <h3>{{ cartMeal.name }}</h3>
+                        <p>{{ cartMeal.price}} DH</p>
                         <button type="button" class="btn-show">Remove</button>
                     </div>
                 </div>
@@ -41,6 +41,7 @@
 <script>
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
+import store from '@/store'
 
 export default {
     components: {
