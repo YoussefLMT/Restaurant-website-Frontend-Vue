@@ -31,10 +31,10 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
     <div v-if="loading" class="text-center mt-5 mb-5">
-        <h3>Loading...</h3>
+        <Circle />
     </div>
     <div v-else class="content">
-        <Meal v-for="meal in homeMeals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id"/>
+        <Meal v-for="meal in homeMeals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id" />
     </div>
     <div class="title">
         <router-link to="/menu" class="btn">See All</router-link>
@@ -74,6 +74,7 @@ import imageCat3 from '@/assets/salad.png'
 import imageCat4 from '@/assets/sandwich.png'
 import imageCat5 from '@/assets/spaguetti.png'
 import store from '@/store'
+import Circle from 'vue-loading-spinner/src/components/Circle'
 
 export default {
     name: 'HomeView',
@@ -82,7 +83,8 @@ export default {
         Meal,
         Feature,
         Footer,
-        Category
+        Category,
+        Circle
     },
     data() {
         return {
