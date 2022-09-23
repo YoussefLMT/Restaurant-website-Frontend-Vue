@@ -103,6 +103,9 @@ export default {
         window.addEventListener('resize', this.checkScreenWidth)
         this.checkScreenWidth()
     },
+    mounted() {
+        this.getCartCount()
+    },
     methods: {
         toggleNavBar() {
             this.mobileNav = !this.mobileNav
