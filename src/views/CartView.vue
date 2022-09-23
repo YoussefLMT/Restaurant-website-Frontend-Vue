@@ -5,8 +5,8 @@
 
 <div class="container mt-5">
     <h3 class="text-center">Walcome in your cart</h3>
-    <div v-if="loading" class="text-center mb-5">
-        <h3>Loading...</h3>
+    <div v-if="loading" class="text-center mt-5 mb-5">
+        <Circle />
     </div>
     <div v-else>
         <div v-if="cartMealsLenth === 0"  class="empty-cart mt-5">
@@ -45,11 +45,13 @@
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 import store from '@/store'
+import Circle from 'vue-loading-spinner/src/components/Circle'
 
 export default {
     components: {
         NavBar,
-        Footer
+        Footer,
+        Circle
     },
     mounted() {
         store.dispatch('cart/getCartMeals')
