@@ -101,6 +101,7 @@ export default {
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
+    border: none;
 }
 
 .btn-show:hover {
