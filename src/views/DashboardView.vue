@@ -17,7 +17,6 @@
             <Card icon="fa-solid fa-dollar-sign" title="Income" :count="income + 'DH'" />
         </div>
     </div>
-
 </div>
 </template>
 
@@ -54,7 +53,6 @@ export default {
             this.usersCount = response.data.usersCount
             this.income = response.data.income
         },
-
     },
 }
 </script>
