@@ -54,6 +54,17 @@ export default {
             sidebarWidth,
         }
     },
+    mounted() {
+        store.dispatch('orders/getOrders')
+    },
+    computed: {
+        orders() {
+            return store.getters['orders/orders']
+        },
+        loading() {
+            return store.getters['orders/loading']
+        }
+    },
 }
 </script>
 
