@@ -19,11 +19,21 @@ export default {
         return {
             sidebarWidth,
             ordersCount: '',
-            productsCount: '',
+            mealsCount: '',
             usersCount: '',
             income: ''
         }
-    }
+    },
+    methods: {
+        async getTotalCount() {
+            const response = await axiosInstance.get('/statistics')
+            this.ordersCount = response.data.ordersCount
+            this.mealsCount = response.data.mealsCount
+            this.usersCount = response.data.usersCount
+            this.income = response.data.income
+        },
+
+    },
 }
 </script>
 
