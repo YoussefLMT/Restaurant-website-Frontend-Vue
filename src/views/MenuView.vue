@@ -9,7 +9,7 @@
 
 <div class="menu">
     <div v-if="loading" class="text-center mt-5 mb-5">
-        <Circle />
+        <h3>Loading...</h3>
     </div>
     <div v-else class="content">
         <Meal v-for="meal in meals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id"/>
@@ -24,14 +24,12 @@ import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 import Meal from '@/components/Meal.vue'
 import store from '@/store'
-import Circle from 'vue-loading-spinner/src/components/Circle'
 
 export default {
     components: {
         NavBar,
         Footer,
-        Meal,
-        Circle
+        Meal
     },
     mounted() {
         store.dispatch('meals/getMeals')
