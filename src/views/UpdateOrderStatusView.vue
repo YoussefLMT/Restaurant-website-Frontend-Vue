@@ -19,7 +19,7 @@
                                 <option value="shipping">shipping</option>
                                 <option value="shipped">shipped</option>
                             </select>
-                            <button type="button" class="btn btn-primary mt-3">Save changes</button>
+                            <button type="button" @click="updateOrderStatus" class="btn btn-primary mt-3">Save changes</button>
                         </form>
                     </div>
                 </div>
@@ -44,6 +44,32 @@ export default {
         return {
             sidebarWidth,
             status: ''
+        }
+    },
+    methods: {
+        async updateOrderStatus() {
+            const response = await axiosInstance.put(`/update-order-status/${this.$route.params.id}`, {
+                status: this.status
+            })
+
+            if (response.data.status === 200) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                
+                Toast.fire({
+                    icon: 'success',
+                    title: response.data.message
+                })
+            }
         }
     },
 }
