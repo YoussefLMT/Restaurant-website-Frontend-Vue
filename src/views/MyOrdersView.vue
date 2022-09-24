@@ -4,7 +4,7 @@
 </div>
 
 <div class="container mt-5">
-    <h3>My Orders</h3><br><br>
+    <h3 class="text-center">My Orders</h3><br><br>
     <div v-if="loading" class="text-center mb-5">
         <Circle />
     </div>
