@@ -9,14 +9,6 @@
             <table class="table">
                 <tbody>
                     <tr>
-                        <th scope="col">Amount</th>
-                        <td>100DH</td>
-                    </tr>
-                    <tr>
-                        <th scope="col">Shipment</th>
-                        <td>50DH</td>
-                    </tr>
-                    <tr>
                         <th scope="col">Total Amount</th>
                         <td>500DH</td>
                     </tr>
@@ -29,15 +21,15 @@
             <form>
                 <div class="mb-3">
                     <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address">
+                    <input type="text" class="form-control" id="address" v-model="address">
                 </div>
                 <div class="mb-3">
                     <label for="city" class="form-label">City</label>
-                    <input type="text" class="form-control" id="city">
+                    <input type="text" class="form-control" id="city" v-model="city">
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="phone">
+                    <input type="text" class="form-control" id="phone" v-model="phone">
                 </div>
                 <button type="button" class="btn">Order</button>
             </form>
@@ -56,6 +48,14 @@ export default {
     components: {
         NavBar,
         Footer
+    },
+    data() {
+        return {
+            total_amount: '',
+            address: '',
+            city: '',
+            phone: ''
+        }
     },
 }
 </script>
