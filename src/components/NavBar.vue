@@ -29,15 +29,17 @@
                     <router-link class="link" to="/register">Register</router-link>
                 </li>
             </div>
-            <li v-else>
-                <router-link class="link" to="/cart">Cart ({{cart_count}})</router-link>
-            </li>
-            <li>
-                <router-link class="link" to="/my-orders">My Orders</router-link>
-            </li>
-            <li>
-                <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
-            </li>
+            <div v-else>
+                <li>
+                    <router-link class="link" to="/cart">Cart ({{cart_count}})</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/my-orders">My Orders</router-link>
+                </li>
+                <li>
+                    <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
+                </li>
+            </div>
         </ul>
 
         <div class="icon">
@@ -70,16 +72,17 @@
                         <router-link class="link" to="/register">Register</router-link>
                     </li>
                 </div>
-
-                <li v-else>
-                    <router-link class="link" to="/cart">Cart ({{cart_count}})</router-link>
-                </li>
-                <li>
-                    <router-link class="link" to="/my-orders">My Orders</router-link>
-                </li>
-                <li>
-                    <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
-                </li>
+                <div v-else>
+                    <li>
+                        <router-link class="link" to="/cart">Cart ({{cart_count}})</router-link>
+                    </li>
+                    <li>
+                        <router-link class="link" to="/my-orders">My Orders</router-link>
+                    </li>
+                    <li>
+                        <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
+                    </li>
+                </div>
             </ul>
         </transition>
     </nav>
