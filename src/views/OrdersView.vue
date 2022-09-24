@@ -52,7 +52,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                   <h1>tt</h1>
+                    <h1>tt</h1>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -77,6 +77,7 @@ export default {
     data() {
         return {
             sidebarWidth,
+            order_meals: []
         }
     },
     mounted() {
@@ -89,6 +90,12 @@ export default {
         loading() {
             return store.getters['orders/loading']
         }
+    },
+    methods: {
+        async getOrderMeals(id) {
+            const response = await axiosInstance.get(`get-order-meals/${id}`)
+            this.order_meals = response.data.order_meals
+        },
     },
 }
 </script>
