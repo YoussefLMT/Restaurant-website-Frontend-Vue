@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <router-link v-if="cartMealsLength > 0" to="/order" class="btn btn-primary">Order Now</router-link><br><br>
+        <router-link v-if="cartMealsLength > 0" to="/order" class="btn mt-5">Order Now</router-link><br><br>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4" v-for="cartMeal in cartMeals" :key="cartMeal.id">
 
@@ -29,6 +29,7 @@
                     <div class="text">
                         <h3>{{ cartMeal.name }}</h3>
                         <p>{{ cartMeal.price}} DH</p>
+                        <p>Quantity: {{ cartMeal.quantity}}</p>
                         <button type="button" @click="removeMeal(cartMeal.cart_id)" class="btn">Remove</button>
                     </div>
                 </div>
