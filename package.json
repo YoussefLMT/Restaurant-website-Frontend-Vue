@@ -9,9 +9,11 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^0.27.2",
+    "chart.js": "^3.9.1",
     "core-js": "^3.8.3",
     "sweetalert2": "^11.4.33",
     "vue": "^3.2.13",
+    "vue-chartjs": "^4.1.1",
     "vue-loading-spinner": "^1.0.11",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
