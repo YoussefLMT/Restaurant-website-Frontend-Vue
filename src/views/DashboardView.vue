@@ -3,6 +3,21 @@
 
 <div :style="{ 'margin-left': sidebarWidth }" class="dashboard">
     <h1>Dashboard</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <Card icon="fa-solid fa-shop" title="Products" :count="mealsCount" />
+        </div>
+        <div class="col-md-3">
+            <Card icon="fa-brands fa-shopify" title="Orders" :count="ordersCount" />
+        </div>
+        <div class="col-md-3">
+            <Card icon="fa-solid fa-users" title="Users" :count="usersCount" />
+        </div>
+        <div class="col-md-3">
+            <Card icon="fa-solid fa-dollar-sign" title="Income" :count="income + '$'" />
+        </div>
+    </div>
+
 </div>
 </template>
 
@@ -11,9 +26,13 @@ import Sidebar from '@/components/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebarState'
+import axiosInstance from '@/axios'
+import Card from '../components/Card'
+
 export default {
     components: {
-        Sidebar
+        Sidebar,
+        Card
     },
     setup() {
         return {
@@ -23,6 +42,9 @@ export default {
             usersCount: '',
             income: ''
         }
+    },
+    mounted() {
+        this.getTotalCount()
     },
     methods: {
         async getTotalCount() {
