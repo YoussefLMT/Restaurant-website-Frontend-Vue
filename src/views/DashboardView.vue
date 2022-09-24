@@ -5,7 +5,7 @@
     <h1>Dashboard</h1>
     <div class="row">
         <div class="col-md-3">
-            <Card icon="fa-solid fa-shop" title="Products" :count="mealsCount" />
+            <Card icon="fa-solid fa-burger" title="Meals" :count="mealsCount" />
         </div>
         <div class="col-md-3">
             <Card icon="fa-brands fa-shopify" title="Orders" :count="ordersCount" />
@@ -14,7 +14,7 @@
             <Card icon="fa-solid fa-users" title="Users" :count="usersCount" />
         </div>
         <div class="col-md-3">
-            <Card icon="fa-solid fa-dollar-sign" title="Income" :count="income + '$'" />
+            <Card icon="fa-solid fa-dollar-sign" title="Income" :count="income + 'DH'" />
         </div>
     </div>
 
