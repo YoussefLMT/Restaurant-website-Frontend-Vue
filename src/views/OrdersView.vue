@@ -52,7 +52,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h1>tt</h1>
+                    <div class="card mb-3" style="width: 18rem;" v-for="orderMeal in order_meals" :key="orderMeal.id">
+                        <img :src="'http://127.0.0.1:8000/' + orderMeal.image" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ orderMeal.name}}</h5>
+                            <p class="card-text text-center">{{ orderMeal.price }} DH</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -69,6 +75,7 @@ import {
     sidebarWidth
 } from '@/components/sidebarState'
 import store from '@/store'
+import axiosInstance from '@/axios'
 
 export default {
     components: {
@@ -108,5 +115,13 @@ export default {
 
 .me {
     margin: 50px auto;
+}
+
+img {
+    width: 150px;
+    margin: 0 auto;
+}
+.card {
+    margin: 0 auto;
 }
 </style>
