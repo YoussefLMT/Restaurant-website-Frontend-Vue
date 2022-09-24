@@ -13,7 +13,7 @@
                     <div class="col-md-6 mx-auto">
                         <form>
                             <label class="mb-3">Select Status</label>
-                            <select class="form-select">
+                            <select class="form-select" v-model="status">
                                 <option value="pending">pending</option>
                                 <option value="in progress">in progress</option>
                                 <option value="shipping">shipping</option>
@@ -43,6 +43,7 @@ export default {
     data() {
         return {
             sidebarWidth,
+            status: ''
         }
     },
 }
