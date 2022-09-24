@@ -16,6 +16,7 @@ import {
     LinearScale
 } from 'chart.js'
 import axiosInstance from '@/axios'
+
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
     name: 'BarChart',
@@ -67,5 +68,14 @@ export default {
             },
         }
     },
+    mounted() {
+        this.getOrdersStatistics()
+    },
+    methods: {
+        async getOrdersStatistics() {
+            const response = await axiosInstance.get('/orders-statistics')
+            this.chartData.datasets[0].data = response.data.ordersCount.map((c) => c.count)
+        }
+    }
 }
 </script>
