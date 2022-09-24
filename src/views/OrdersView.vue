@@ -36,6 +36,7 @@
                         <td class="badge text-bg-warning mt-2">{{ order.status }}</td>
                         <td>
                             <button type="button" @click="getOrderMeals(order.id)" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#getOrderMeals">Meals</button>
+                            <router-link :to="{ name: 'updateOrderStatus', params: {id: order.id }}" class="btn btn-primary">Update Status</router-link>
                         </td>
                     </tr>
                 </tbody>
@@ -121,6 +122,7 @@ img {
     width: 150px;
     margin: 0 auto;
 }
+
 .card {
     margin: 0 auto;
 }
