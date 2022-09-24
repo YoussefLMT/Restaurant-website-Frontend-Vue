@@ -109,7 +109,9 @@ export default {
         this.checkScreenWidth()
     },
     mounted() {
-        this.getCartCount()
+        if (localStorage.getItem('token')) {
+            this.getCartCount()
+        }
     },
     methods: {
         toggleNavBar() {
