@@ -31,7 +31,7 @@
                     <label for="phone" class="form-label">Phone</label>
                     <input type="text" class="form-control" id="phone" v-model="phone">
                 </div>
-                <button type="button" class="btn">Order</button>
+                <button type="button" @click="placeOrder" class="btn">Order</button>
             </form>
         </div>
     </div>
@@ -44,6 +44,7 @@
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 import axiosInstance from '@/axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -66,6 +67,34 @@ export default {
             const response = await axiosInstance.get('/total-price')
             this.total_amount = response.data.total_price
         },
+
+        async placeOrder() {
+            const response = await axiosInstance.post('/place-order', {
+                address: this.address,
+                city: this.city,
+                phone: this.phone
+            })
+
+            if (response.data.status === 200) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+
+                Toast.fire({
+                    icon: 'success',
+                    title: response.data.message
+                })
+                this.$router.push('/')
+            }
+        }
     },
 }
 </script>
