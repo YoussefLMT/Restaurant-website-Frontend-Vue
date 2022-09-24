@@ -185,8 +185,8 @@ const routes = [
     }
   },
   {
-    path: '/update-order/:id',
-    name: 'updateOrder',
+    path: '/update-order-status/:id',
+    name: 'updateOrderStatus',
     component: () => import('../views/UpdateOrderStatusView.vue'),
     meta: {
       requiresAuth: true
