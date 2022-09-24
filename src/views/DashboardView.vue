@@ -33,7 +33,7 @@ export default {
         Sidebar,
         Card
     },
-    setup() {
+    data() {
         return {
             sidebarWidth,
             ordersCount: '',
