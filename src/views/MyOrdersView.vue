@@ -6,7 +6,7 @@
 <div class="container mt-5">
     <h3>My Orders</h3><br><br>
     <div v-if="loading" class="text-center mb-5">
-        <h3>Loading...</h3>
+        <Circle />
     </div>
     <div class="row" v-else v-for="order in userOrders" :key="order.id">
         <div class="col-sm-3">
@@ -34,11 +34,13 @@
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 import store from '@/store'
+import Circle from 'vue-loading-spinner/src/components/Circle'
 
 export default {
     components: {
         NavBar,
-        Footer
+        Footer,
+        Circle
     },
     mounted() {
         store.dispatch('orders/getUserOrders')
