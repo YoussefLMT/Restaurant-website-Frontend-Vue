@@ -5,20 +5,24 @@
 
 <div class="container mt-5">
     <h3>My Orders</h3><br><br>
-    <div class="row">
+    <div v-if="loading" class="text-center mb-5">
+        <h3>Loading...</h3>
+    </div>
+    <div class="row" v-else v-for="order in userOrders" :key="order.id">
         <div class="col-sm-3">
             <div class="card mb-3" style="width: 18rem;">
-                <img class="card-img-top" src="@/assets/cart.png">
+                <img class="card-img-top" :src="'http://127.0.0.1:8000/' + order.image">
                 <div class="card-body">
-                    <h5 class="card-title">ttt</h5>
-                    <p class="card-text">300 DH</p>
+                    <h5 class="card-title">{{ order.name }}</h5>
+                    <p class="card-text">{{ order.price }} DH</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-4 ml-5">
-            <p>Address: tt</p>
-            <p>City: tt</p>
-            <p class="badge text-bg-warning">Status: tt</p>
+            <p>Address: {{ order.address }}</p>
+            <p>City: {{ order.city }}</p>
+            <p>Phone: {{ order.phone }}</p>
+            <p class="badge text-bg-warning">Status: {{ order.status }}</p>
         </div>
     </div>
 </div>
