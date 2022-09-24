@@ -29,11 +29,23 @@
 <script>
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
+import store from '@/store'
 
 export default {
     components: {
         NavBar,
         Footer
+    },
+    mounted() {
+        store.dispatch('orders/getUserOrders')
+    },
+    computed: {
+        userOrders() {
+            return store.getters['orders/userOrders']
+        },
+        loading() {
+            return store.getters['orders/loading']
+        }
     },
 }
 </script>
