@@ -6,7 +6,7 @@
     <SidebarLink to="/users" icon="fa-solid fa-users">Users</SidebarLink>
     <SidebarLink to="/orders" icon="fa-sharp fa-solid fa-bag-shopping">Orders</SidebarLink>
 
-    <button class="logout-btn">Log Out</button>
+    <button @click="logOut" class="logout-btn">Log Out</button>
 
     <span class="collapse-icon" :class="{ 'rotate-180': collapsed }" @click="toggleSidebar">
         <i class="fas fa-angle-double-left" />
@@ -21,19 +21,52 @@ import {
     toggleSidebar,
     sidebarWidth
 } from './sidebarState'
+import Swal from 'sweetalert2'
+import axiosInstance from '@/axios'
 
 export default {
     props: {},
     components: {
         SidebarLink
     },
-    setup() {
+    data() {
         return {
             collapsed,
-            toggleSidebar,
             sidebarWidth
         }
-    }
+    },
+    methods: {
+        toggleSidebar,
+
+        async logOut() {
+            try {
+                const response = await axiosInstance.post("/logout")
+                if (response.data.status === 200) {
+                    localStorage.removeItem('token')
+                    localStorage.removeItem('role')
+
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+
+                    this.$router.push('/login')
+                }
+            } catch (error) {}
+        }
+    },
+
 }
 </script>
 
@@ -43,9 +76,7 @@ export default {
     --sidebar-item-hover: #64748b;
     --sidebar-item-active: #334155;
 }
-</style>
-
-<style scoped>
+</style><style scoped>
 .sidebar {
     color: white;
     background-color: var(--sidebar-bg-color);
@@ -79,7 +110,7 @@ export default {
     transition: 0.2s linear;
 }
 
-.logout-btn{
+.logout-btn {
     margin: 350px 10px 200px 10px;
     border: 0;
     padding: 10px;
