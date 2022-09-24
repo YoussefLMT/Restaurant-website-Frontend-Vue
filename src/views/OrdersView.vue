@@ -22,15 +22,18 @@
                         <th scope="col">actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>6</td>
-                        <td>y</td>
-                        <td>y</td>
-                        <td>h</td>
-                        <td>y</td>
-                        <td class="badge text-bg-warning mt-2">yy</td>
+                <div v-if="loading" class="spinner">
+                    <h3>Loading...</h3>
+                </div>
+                <tbody v-else>
+                    <tr v-for="order in orders" :key="order.id">
+                        <th scope="row">{{ order.id }}</th>
+                        <td>{{ order.user_id }}</td>
+                        <td>{{ order.address }}</td>
+                        <td>{{ order.city }}</td>
+                        <td>{{ order.phone }}</td>
+                        <td>{{ order.total_amount }}</td>
+                        <td class="badge text-bg-warning mt-2">{{ order.status }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -44,6 +47,7 @@ import Sidebar from '@/components/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebarState'
+import store from '@/store'
 
 export default {
     components: {
