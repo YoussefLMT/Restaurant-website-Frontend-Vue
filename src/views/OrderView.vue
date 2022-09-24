@@ -66,4 +66,21 @@ export default {
     padding: 45px 0px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
 }
+
+.btn {
+    font-size: 15px;
+    color: #fff;
+    background: #e74c3c;
+    display: inline-block;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    border: none;
+}
+
+.btn:hover {
+    background: hsl(6, 84%, 34%);
+    border: none;
+}
 </style>
