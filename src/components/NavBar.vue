@@ -29,7 +29,8 @@
                     <router-link class="link" to="/register">Register</router-link>
                 </li>
             </div>
-            <div v-else>
+
+            <div v-else class="d-flex mt-2">
                 <li>
                     <router-link class="link" to="/cart">Cart ({{cart_count}})</router-link>
                 </li>
@@ -72,6 +73,7 @@
                         <router-link class="link" to="/register">Register</router-link>
                     </li>
                 </div>
+
                 <div v-else>
                     <li>
                         <router-link class="link" to="/cart">Cart ({{cart_count}})</router-link>
