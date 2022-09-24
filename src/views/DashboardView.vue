@@ -17,7 +17,11 @@ export default {
     },
     setup() {
         return {
-            sidebarWidth
+            sidebarWidth,
+            ordersCount: '',
+            productsCount: '',
+            usersCount: '',
+            income: ''
         }
     }
 }
