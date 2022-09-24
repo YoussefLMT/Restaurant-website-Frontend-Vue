@@ -10,7 +10,7 @@
                 <tbody>
                     <tr>
                         <th scope="col">Total Amount</th>
-                        <td>500DH</td>
+                        <td>{{total_amount}} DH</td>
                     </tr>
                 </tbody>
             </table>
@@ -57,6 +57,9 @@ export default {
             city: '',
             phone: ''
         }
+    },
+    mounted() {
+        this.getOrderTotalPrice()
     },
     methods: {
         async getOrderTotalPrice() {
