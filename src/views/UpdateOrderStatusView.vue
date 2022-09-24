@@ -35,6 +35,7 @@ import {
     sidebarWidth
 } from '@/components/sidebarState'
 import axiosInstance from '@/axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -64,7 +65,7 @@ export default {
                         toast.addEventListener('mouseleave', Swal.resumeTimer)
                     }
                 })
-                
+
                 Toast.fire({
                     icon: 'success',
                     title: response.data.message

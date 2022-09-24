@@ -22,7 +22,7 @@
             <p>Address: {{ order.address }}</p>
             <p>City: {{ order.city }}</p>
             <p>Phone: {{ order.phone }}</p>
-            <p class="badge text-bg-warning">Status: {{ order.status }}</p>
+            <p class="badge tt text-bg-warning">Status: {{ order.status }}</p>
         </div>
     </div>
 </div>
@@ -61,5 +61,9 @@ export default {
     background-color: blue;
     padding: 45px 0px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+}
+
+.tt {
+    font-size: 15px;
 }
 </style>
