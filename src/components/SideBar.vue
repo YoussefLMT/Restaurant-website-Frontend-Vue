@@ -6,6 +6,8 @@
     <SidebarLink to="/users" icon="fa-solid fa-users">Users</SidebarLink>
     <SidebarLink to="/orders" icon="fa-sharp fa-solid fa-bag-shopping">Orders</SidebarLink>
 
+    <button class="logout-btn">Log Out</button>
+
     <span class="collapse-icon" :class="{ 'rotate-180': collapsed }" @click="toggleSidebar">
         <i class="fas fa-angle-double-left" />
     </span>
@@ -75,5 +77,15 @@ export default {
 .rotate-180 {
     transform: rotate(180deg);
     transition: 0.2s linear;
+}
+
+.logout-btn{
+    margin: 350px 10px 200px 10px;
+    border: 0;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #2980b9;
+    font-weight: bold;
+    color: white;
 }
 </style>
