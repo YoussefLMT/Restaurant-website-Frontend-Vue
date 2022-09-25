@@ -114,4 +114,15 @@ export default {
     background: hsl(6, 84%, 34%);
     border: none;
 }
+
+@media (max-width: 600px) {
+    .main .content h1 {
+        font-size: 50px;
+    }
+
+    .main .content p {
+        font-size: 20px;
+        width: 400px;
+    }
+}
 </style>

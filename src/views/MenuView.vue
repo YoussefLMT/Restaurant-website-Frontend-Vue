@@ -164,4 +164,15 @@ export default {
     flex-wrap: wrap;
     margin-top: 40px;
 }
+
+@media (max-width: 600px) {
+    .main .content h1 {
+        font-size: 50px;
+    }
+
+    .main .content p {
+        font-size: 20px;
+        width: 400px;
+    }
+}
 </style>
