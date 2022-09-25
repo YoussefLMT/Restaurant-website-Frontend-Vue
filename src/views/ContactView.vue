@@ -59,7 +59,7 @@ export default {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 70vh;
+    height: 65vh;
 }
 
 .main .main-content {
