@@ -20,6 +20,10 @@
     </div>
 </div>
 
+<div v-if="mealsTestLength === 0 && category != 'all'">
+    <h5 class="text-center mt-3">There is no meal in this category</h5>
+</div>
+
 <div class="menu">
     <div v-if="loading" class="text-center mt-5 mb-5">
         <Circle />
@@ -66,6 +70,9 @@ export default {
         },
         loading() {
             return store.getters['meals/loading']
+        },
+        mealsTestLength(){
+            return this.mealsTest.length
         }
     },
     methods: {
