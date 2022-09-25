@@ -99,12 +99,6 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.navbar {
-    background-color: blue;
-    padding: 45px 0px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
-}
-
 .btn {
     font-size: 15px;
     color: #fff;
