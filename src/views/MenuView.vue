@@ -12,6 +12,9 @@
                 <option value="all">All</option>
                 <option value="pizza">Pizza</option>
                 <option value="burger">Burger</option>
+                <option value="salad">Salad</option>
+                <option value="sandwich">Sandwich</option>
+                <option value="spaguetti">Spaguetti</option>
             </select>
         </div>
     </div>
@@ -24,7 +27,7 @@
     <div v-else-if="category === 'all'" class="content">
         <Meal v-for="meal in meals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id" />
     </div>
-    <div v-if="mealsTest" class="content">
+    <div v-else-if="mealsTest" class="content">
         <Meal v-for="meal in mealsTest" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id" />
     </div>
 </div>
