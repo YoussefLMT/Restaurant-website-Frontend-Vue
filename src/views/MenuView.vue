@@ -5,6 +5,11 @@
 
 <div class="container mt-5">
     <h2 class="title-txt text-center">Our <span>Menu</span></h2>
+    <select class="form-select" v-model="category" @change="onChange">
+        <option value="all">All</option>
+        <option value="pizza">Pizza</option>
+        <option value="burger">Burger</option>
+    </select>
 </div>
 
 <div class="menu">
@@ -59,6 +64,10 @@ export default {
         async getMealsByCategory() {
             const response = await axiosInstance.get(`meals-category/${this.category}`)
             this.mealsTest = response.data.meals
+        },
+
+        onChange(){
+            this.getMealsByCategory()
         }
     },
 }
