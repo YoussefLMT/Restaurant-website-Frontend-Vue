@@ -11,8 +11,11 @@
     <div v-if="loading" class="text-center mt-5 mb-5">
         <Circle />
     </div>
-    <div v-else class="content">
+    <div v-else-if="category === 'all'" class="content">
         <Meal v-for="meal in meals" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id" />
+    </div>
+    <div v-if="mealsTest" class="content">
+        <Meal v-for="meal in mealsTest" :key="meal.id" :image="'http://127.0.0.1:8000/' + meal.image" :name="meal.name" :price="meal.price" :id="meal.id" />
     </div>
 </div>
 
@@ -50,6 +53,12 @@ export default {
         },
         loading() {
             return store.getters['meals/loading']
+        }
+    },
+    methods: {
+        async getMealsByCategory() {
+            const response = await axiosInstance.get(`meals-category/${this.category}`)
+            this.mealsTest = response.data.meals
         }
     },
 }
