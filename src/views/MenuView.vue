@@ -5,11 +5,16 @@
 
 <div class="container mt-5">
     <h2 class="title-txt text-center">Our <span>Menu</span></h2>
-    <select class="form-select" v-model="category" @change="onChange">
-        <option value="all">All</option>
-        <option value="pizza">Pizza</option>
-        <option value="burger">Burger</option>
-    </select>
+    <div class="row">
+        <div class="col-md-4 mx-auto mt-3">
+            <label for="category" class="form-label">Select a category</label>
+            <select class="form-select" v-model="category" @change="onChange" id="category">
+                <option value="all">All</option>
+                <option value="pizza">Pizza</option>
+                <option value="burger">Burger</option>
+            </select>
+        </div>
+    </div>
 </div>
 
 <div class="menu">
@@ -66,7 +71,7 @@ export default {
             this.mealsTest = response.data.meals
         },
 
-        onChange(){
+        onChange() {
             this.getMealsByCategory()
         }
     },
