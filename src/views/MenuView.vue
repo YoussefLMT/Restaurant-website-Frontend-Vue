@@ -25,6 +25,7 @@ import Footer from '@/components/Footer.vue'
 import Meal from '@/components/Meal.vue'
 import store from '@/store'
 import Circle from 'vue-loading-spinner/src/components/Circle'
+import axiosInstance from '@/axios'
 
 export default {
     components: {
@@ -33,8 +34,15 @@ export default {
         Meal,
         Circle
     },
+    data() {
+        return {
+            category: 'all',
+            mealsTest: []
+        }
+    },
     mounted() {
         store.dispatch('meals/getMeals')
+        this.getMealsByCategory()
     },
     computed: {
         meals() {
