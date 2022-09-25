@@ -15,7 +15,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="contact">
+        <div class="contact animate__animated animate__backInDown">
             <h2 class="text-center mb-3">Contact us</h2>
             <p>If you have any questions, do not hesitate to ask them.</p>
             <i class="fa fa-map-marker w3-text-blue mb-2" style="width: 30px"></i>
