@@ -54,6 +54,42 @@ export default {
 </script>
 
 <style scoped>
+.main {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("@/assets/pexels-pixabay-326279.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vh;
+}
+
+.main .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.main .content {
+    max-width: 900px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.main .content h1 {
+    font-size: 70px;
+    color: #fff;
+}
+
+.content span {
+    color: #e74c3c;
+}
+
+.main .content p {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 20px;
+}
+
 .contact {
     margin: 0 auto;
     margin-top: 90px;
