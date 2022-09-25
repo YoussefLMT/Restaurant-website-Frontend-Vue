@@ -1,7 +1,17 @@
 <template>
-<div class="navbar">
-    <NavBar />
-</div>
+<NavBar />
+
+<section class="main">
+    <div class="main-content">
+        <div class="content">
+            <h1><span>Contact</span> Us</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sed autem voluptate itaque fugit possimus veritatis,
+                totam voluptates. Possimus molestias quisquam unde
+            </p>
+        </div>
+    </div>
+</section>
 
 <div class="container">
     <div class="row">
