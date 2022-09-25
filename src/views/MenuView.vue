@@ -14,7 +14,6 @@
 </section>
 
 <div class="container mt-5">
-    <h2 class="title-txt text-center">Our <span>Menu</span></h2>
     <div class="row">
         <div class="col-md-4 mx-auto mt-3">
             <label for="category" class="form-label">Select a category</label>
