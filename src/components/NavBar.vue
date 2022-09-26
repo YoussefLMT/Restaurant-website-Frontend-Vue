@@ -205,7 +205,7 @@ header nav ul .link {
     border-bottom: 1px solid transparent;
 }
 
-header nav ul .link:hover {
+header nav ul .link:hover, .link.router-link-active {
     color: #e74c3c;
     border-color: #e74c3c;
 }
