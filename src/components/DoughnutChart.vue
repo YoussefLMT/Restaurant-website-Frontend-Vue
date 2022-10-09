@@ -4,10 +4,21 @@
 
 <script>
 import Chart from 'chart.js/auto';
+import axiosInstance from '@/axios'
 
 export default {
+    data() {
+        return {
+            pendingOrdersCount: '',
+            inProgressOrdersCount: '',
+            shippingOrdersCount: '',
+            shippedOrdersCount: ''
+        }
+    },
     mounted() {
         const ctx = document.getElementById('myChart');
+
+        this.getOrdersStatistics()
 
         const data = {
             labels: [
@@ -38,7 +49,6 @@ export default {
     methods: {
         async getOrdersStatistics() {
             const response = await axiosInstance.get('/orders-statistics')
-            console.log(response.data) 
         }
     }
 }
