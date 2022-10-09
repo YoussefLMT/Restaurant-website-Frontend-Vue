@@ -1,10 +1,12 @@
 <template>
 <div class="sidebar" :style="{ width: sidebarWidth }">
 
-    <SidebarLink to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLink>
-    <SidebarLink to="/meals" icon="fa-solid fa-burger">Meals</SidebarLink>
-    <SidebarLink to="/users" icon="fa-solid fa-users">Users</SidebarLink>
-    <SidebarLink to="/orders" icon="fa-sharp fa-solid fa-bag-shopping">Orders</SidebarLink>
+    <div class="links">
+        <SidebarLink to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLink>
+        <SidebarLink to="/meals" icon="fa-solid fa-burger">Meals</SidebarLink>
+        <SidebarLink to="/users" icon="fa-solid fa-users">Users</SidebarLink>
+        <SidebarLink to="/orders" icon="fa-sharp fa-solid fa-bag-shopping">Orders</SidebarLink>
+    </div>
 
     <button @click="logOut" class="logout-btn">Log Out</button>
 
@@ -118,5 +120,9 @@ export default {
     background-color: #2980b9;
     font-weight: bold;
     color: white;
+}
+
+.links{
+    margin-top: 20px;
 }
 </style>
