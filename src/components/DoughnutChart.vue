@@ -35,6 +35,12 @@ export default {
         myChart
 
     },
+    methods: {
+        async getOrdersStatistics() {
+            const response = await axiosInstance.get('/orders-statistics')
+            console.log(response.data) 
+        }
+    }
 }
 </script>
 
