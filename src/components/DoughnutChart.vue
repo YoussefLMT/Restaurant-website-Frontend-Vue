@@ -9,10 +9,12 @@ import axiosInstance from '@/axios'
 export default {
     data() {
         return {
-            pendingOrdersCount: '',
-            inProgressOrdersCount: '',
-            shippingOrdersCount: '',
-            shippedOrdersCount: ''
+            data: {
+                pendingOrdersCount: '',
+                inProgressOrdersCount: '',
+                shippingOrdersCount: '',
+                shippedOrdersCount: ''
+            }
         }
     },
     mounted() {
@@ -28,7 +30,7 @@ export default {
             ],
             datasets: [{
                 label: 'My First Dataset',
-                data: [300, 50, 100],
+                data: [this.pendingOrdersCount, this.inProgressOrdersCount, this.shippingOrdersCount],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
                     'rgb(54, 162, 235)',
@@ -49,6 +51,10 @@ export default {
     methods: {
         async getOrdersStatistics() {
             const response = await axiosInstance.get('/orders-statistics')
+            this.pendingOrdersCount = response.data.pendingOrdersCount
+            this.inProgressOrdersCount = response.data.inProgressOrdersCount
+            this.shippingOrdersCount = response.data.shippingOrdersCount
+            this.shippedOrdersCount = response.data.shippedOrdersCount
         }
     }
 }
