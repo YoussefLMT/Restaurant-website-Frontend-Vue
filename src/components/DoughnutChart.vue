@@ -9,12 +9,10 @@ import axiosInstance from '@/axios'
 export default {
     data() {
         return {
-            data: {
                 pendingOrdersCount: '',
                 inProgressOrdersCount: '',
                 shippingOrdersCount: '',
                 shippedOrdersCount: ''
-            }
         }
     },
     mounted() {
