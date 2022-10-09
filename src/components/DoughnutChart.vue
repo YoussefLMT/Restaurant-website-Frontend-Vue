@@ -24,17 +24,18 @@ export default {
 
         const data = {
             labels: [
-                'Red',
-                'Blue',
-                'Yellow'
+                'pending orders',
+                'inProgress orders',
+                'shipping orders',
+                'shipped orders'
             ],
             datasets: [{
-                label: 'My First Dataset',
-                data: [this.pendingOrdersCount, this.inProgressOrdersCount, this.shippingOrdersCount],
+                data: [30, 34, 34, this.shippingOrdersCount],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
                     'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
+                    'rgb(255, 205, 86)',
+                    'rgb(44, 233, 35)'
                 ],
                 hoverOffset: 4
             }]
